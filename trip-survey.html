@@ -1,26 +1,513 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trip Survey</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Todd Family Trip 2027 ✈️</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--gold:#c5a55a;--dark:#1a1a2e;--card:#2a2a40;--warm:#f5e6c8;--accent:#e8c97a;--green:#4ade80;--red:#f87171;--blue:#60a5fa}
+body{font-family:'Inter',sans-serif;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#1a1a2e 100%);color:#f0e6d3;min-height:100vh;padding-bottom:120px}
+h1,h2,h3{font-family:'Playfair Display',serif}
+.header{text-align:center;padding:32px 20px 14px;background:linear-gradient(180deg,rgba(197,165,90,0.18),transparent)}
+.header h1{font-size:2.1em;color:var(--gold);margin-bottom:6px;letter-spacing:0.5px}
+.header p{color:var(--warm);opacity:0.75;font-size:0.92em;max-width:380px;margin:0 auto;line-height:1.5}
+.progress-bar{position:sticky;top:0;z-index:100;background:rgba(26,26,46,0.95);backdrop-filter:blur(10px);padding:10px 20px 8px;border-bottom:1px solid rgba(197,165,90,0.15)}
+.progress-track{background:rgba(255,255,255,0.08);border-radius:20px;height:7px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--accent));border-radius:20px;transition:width 0.5s ease;width:0%}
+.progress-label{font-size:0.72em;color:var(--accent);margin-top:5px;text-align:center;font-weight:500}
+.section{max-width:580px;margin:0 auto;padding:0 16px}
+.card{background:var(--card);border-radius:18px;padding:24px;margin-bottom:18px;border:1px solid rgba(197,165,90,0.12);box-shadow:0 8px 32px rgba(0,0,0,0.25);animation:fadeUp 0.4s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.card h2{color:var(--gold);font-size:1.35em;margin-bottom:4px}
+.card .subtitle{color:var(--warm);opacity:0.6;font-size:0.82em;margin-bottom:18px;line-height:1.4}
+.name-input,.text-input{width:100%;padding:14px 16px;border-radius:12px;border:2px solid rgba(197,165,90,0.25);background:rgba(255,255,255,0.04);color:#fff;font-size:1em;font-family:'Inter',sans-serif;outline:none;transition:border-color 0.3s}
+.name-input:focus,.text-input:focus{border-color:var(--gold)}
+textarea.text-input{resize:vertical;min-height:70px;font-size:0.9em}
+.rating-item{display:flex;align-items:center;justify-content:space-between;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
+.rating-item:last-child{border-bottom:none}
+.rating-label{font-size:0.88em;flex:1;padding-right:8px;line-height:1.3}
+.hearts{display:flex;gap:3px}
+.heart{width:30px;height:30px;border-radius:50%;border:2px solid rgba(197,165,90,0.25);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:13px;transition:all 0.2s;user-select:none}
+.heart.active{background:var(--gold);border-color:var(--gold);transform:scale(1.1)}
+.heart:hover{border-color:var(--gold);transform:scale(1.08)}
+.interest-item{display:flex;align-items:center;justify-content:space-between;padding:7px 0;border-bottom:1px solid rgba(255,255,255,0.04);gap:6px}
+.interest-item:last-child{border-bottom:none}
+.interest-label{font-size:0.85em;flex:1;min-width:0}
+.interest-btns{display:flex;gap:3px;flex-shrink:0}
+.ibtn{padding:5px 7px;border-radius:8px;border:1px solid rgba(197,165,90,0.18);background:transparent;color:var(--warm);cursor:pointer;font-size:0.68em;transition:all 0.2s;font-family:'Inter',sans-serif;white-space:nowrap}
+.ibtn.active{background:var(--gold);color:var(--dark);border-color:var(--gold);font-weight:700}
+.ibtn:hover{border-color:var(--gold)}
+.option-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.opt{padding:10px 15px;border-radius:12px;border:1.5px solid rgba(197,165,90,0.2);background:rgba(255,255,255,0.03);color:var(--warm);cursor:pointer;font-size:0.84em;transition:all 0.2s;font-family:'Inter',sans-serif;user-select:none}
+.opt.active{background:var(--gold);color:var(--dark);border-color:var(--gold);font-weight:600}
+.opt:hover{border-color:var(--gold)}
+.month-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:10px}
+.mbtn{padding:10px 6px;border-radius:10px;border:1.5px solid rgba(197,165,90,0.18);background:rgba(255,255,255,0.03);color:var(--warm);cursor:pointer;font-size:0.82em;text-align:center;transition:all 0.2s;font-family:'Inter',sans-serif;user-select:none}
+.mbtn.great{background:var(--green);color:#1a1a2e;border-color:var(--green);font-weight:700}
+.mbtn.works{background:rgba(197,165,90,0.45);color:#fff;border-color:var(--gold);font-weight:500}
+.mbtn.cant{background:var(--red);color:#fff;border-color:var(--red);opacity:0.85;font-weight:500}
+.legend{display:flex;gap:14px;margin-top:10px;font-size:0.72em;color:var(--warm);opacity:0.6;flex-wrap:wrap}
+.legend span{display:flex;align-items:center;gap:4px}
+.legend .dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+.check-grid{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px}
+.chk{padding:9px 14px;border-radius:10px;border:1.5px solid rgba(197,165,90,0.18);background:rgba(255,255,255,0.03);color:var(--warm);cursor:pointer;font-size:0.82em;transition:all 0.2s;font-family:'Inter',sans-serif;user-select:none}
+.chk.active{background:var(--gold);color:var(--dark);border-color:var(--gold);font-weight:600}
+.chk:hover{border-color:var(--gold)}
+.slider-row{margin:16px 0}
+.slider-row label{font-size:0.88em;color:var(--warm);display:block;margin-bottom:8px;font-weight:500}
+.slider-ends{display:flex;justify-content:space-between;font-size:0.72em;color:var(--warm);opacity:0.55;margin-top:3px}
+input[type=range]{-webkit-appearance:none;width:100%;height:6px;border-radius:6px;background:rgba(255,255,255,0.1);outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--gold);cursor:pointer;border:2px solid var(--dark)}
+.field-label{font-size:0.88em;color:var(--warm);margin:16px 0 6px;font-weight:500}
+.nav{display:flex;gap:10px;margin-top:24px;justify-content:space-between}
+.btn{padding:13px 24px;border-radius:13px;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-weight:600;font-size:0.95em;transition:all 0.2s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(197,165,90,0.25)}
+.btn-next{background:var(--gold);color:var(--dark);flex:1}
+.btn-prev{background:rgba(255,255,255,0.1);color:var(--warm);flex:0.4}
+.btn-submit{background:linear-gradient(135deg,var(--gold),#d4af37);color:var(--dark);flex:1;font-size:1.05em;padding:15px}
+.btn-copy{background:var(--gold);color:var(--dark);width:100%;padding:15px;margin-top:10px}
+.btn-download{background:rgba(255,255,255,0.1);color:var(--warm);width:100%;padding:14px;margin-top:8px}
+.summary-box{background:rgba(0,0,0,0.35);border-radius:14px;padding:16px;font-size:0.78em;line-height:1.7;white-space:pre-wrap;max-height:420px;overflow-y:auto;margin-top:14px;border:1px solid rgba(197,165,90,0.12);font-family:'Inter',monospace}
+.copied-toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--green);color:#1a1a2e;padding:12px 28px;border-radius:14px;font-weight:700;font-size:0.95em;transition:transform 0.4s ease;z-index:9999;box-shadow:0 8px 30px rgba(0,0,0,0.4)}
+.copied-toast.show{transform:translateX(-50%) translateY(0)}
+.inspiration{background:rgba(197,165,90,0.06);border:1px solid rgba(197,165,90,0.12);border-radius:12px;padding:14px;margin-top:14px}
+.inspiration h3{color:var(--accent);font-size:0.9em;margin-bottom:6px}
+.inspiration p{font-size:0.78em;opacity:0.6;line-height:1.5}
+.section-divider{text-align:center;color:var(--gold);opacity:0.3;font-size:1.5em;margin:6px 0}
+canvas#confetti{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999}
+@media(max-width:380px){.ibtn{padding:4px 5px;font-size:0.62em}.heart{width:26px;height:26px;font-size:11px}.card{padding:18px 14px}}
+</style>
 </head>
 <body>
-    <h1>Trip Survey</h1>
-    <form action="#" method="post">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name"><br>
 
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email"><br>
+<div class="header">
+<h1>✈️ 2027: The Big Trip</h1>
+<p>Mom & Dad want to make this happen. Help us figure out where, when, and how — takes about 3 minutes!</p>
+</div>
 
-        <label for="trip-purpose">Purpose of Trip:</label><br>
-        <input type="text" id="trip-purpose" name="trip-purpose"><br>
+<div class="progress-bar">
+<div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+<div class="progress-label" id="progressLabel"></div>
+</div>
 
-        <label for="feedback">Feedback:</label><br>
-        <textarea id="feedback" name="feedback"></textarea><br>
+<div class="section" id="app"></div>
+<div class="copied-toast" id="toast">✅ Copied to clipboard!</div>
+<canvas id="confetti"></canvas>
 
-        <input type="submit" value="Submit">
-    </form>
+<script>
+// ─── DATA ──────────────────────────────────────
+const STEPS=8;
+let step=1, D=JSON.parse(localStorage.getItem('toddTrip2027')||'{}');
+function save(){localStorage.setItem('toddTrip2027',JSON.stringify(D))}
+
+const regions=[
+{id:'west_europe',n:'🇪🇺 Western Europe',s:'France, Spain, Italy, Portugal'},
+{id:'mediterranean',n:'🇬🇷 Mediterranean',s:'Greece, Crete, Croatia, Turkey'},
+{id:'uk_ireland',n:'🇬🇧 UK & Ireland',s:''},
+{id:'scandinavia',n:'🇳🇴 Scandinavia & Iceland',s:''},
+{id:'central_europe',n:'🇨🇿 Central/Eastern Europe',s:'Czech Republic, Hungary, Poland'},
+{id:'mexico',n:'🇲🇽 Mexico',s:'Baja, Oaxaca, Riviera'},
+{id:'central_america',n:'🇨🇷 Central America & Caribbean',s:'Costa Rica, Belize, islands'},
+{id:'south_america',n:'🇧🇷 South America',s:'Argentina, Colombia, Peru'},
+{id:'pacific',n:'🏝️ Pacific Islands',s:'Fiji, Tahiti, Cook Islands'},
+{id:'se_asia',n:'🇹🇭 Southeast Asia',s:'Thailand, Vietnam, Bali'},
+{id:'japan_korea',n:'🇯🇵 Japan & South Korea',s:''},
+{id:'australia_nz',n:'🇦🇺 Australia & New Zealand',s:''},
+{id:'canada',n:'🇨🇦 Canada',s:'BC, Maritimes, Rockies'},
+{id:'us_destinations',n:'🇺🇸 US Destinations',s:'Alaska, Nat\'l Parks, Pacific NW'},
+{id:'africa',n:'🌍 Africa',s:'Morocco, South Africa, safari'}
+];
+
+const activities=[
+{id:'diving',n:'🤿 Scuba / snorkeling'},
+{id:'cycling',n:'🚴 Road cycling / biking'},
+{id:'extreme',n:'⛰️ Extreme sports',s:'paragliding, climbing, canyoning'},
+{id:'golf',n:'⛳ Golf'},
+{id:'skiing',n:'⛷️ Skiing / snowboarding'},
+{id:'water',n:'🛶 Kayaking / paddleboarding'},
+{id:'hiking',n:'🥾 Hiking / nature walks'},
+{id:'cooking',n:'👨‍🍳 Cooking classes / food tours'},
+{id:'wine',n:'🍷 Wine / beer / spirits tasting'},
+{id:'shopping',n:'🛍️ Shopping & local markets'},
+{id:'museums',n:'🏛️ Museums & galleries'},
+{id:'architecture',n:'🏰 Architecture & historic sites'},
+{id:'music',n:'🎵 Live music & performing arts'},
+{id:'art',n:'🎨 Pottery / painting / art workshops'},
+{id:'beach',n:'🏖️ Beach / relaxation'},
+{id:'spa',n:'💆 Spa & wellness'},
+{id:'photo',n:'📸 Photography excursions'},
+{id:'fishing',n:'🎣 Fishing'}
+];
+const lvls=['Skip','Meh','Into it','MUST DO'];
+
+const flightOpts=['4 hrs','6 hrs','8 hrs','10 hrs','12 hrs','15+ hrs','Anywhere worth it! ✈️'];
+const dayOpts=['1 day each way','2 days each way','Whatever it takes'];
+const connectOpts=['Nonstop preferred','Connections fine','Don\'t care'];
+
+const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+const tripLen=['5 days','7 days','10 days','14 days','Flexible — whatever works'];
+
+const homeFeatures=['🏊 Pool','🌊 Ocean/water view','⛰️ Mountain view','🚶 Walking to town','🍳 Large kitchen','🌿 Outdoor dining','🎮 Game room','♨️ Hot tub','🌺 Garden/yard','🅿️ Parking','📶 Good WiFi','🛏️ Ensuite bedrooms'];
+
+const cuisines=['🇮🇹 Italian','🇫🇷 French','🫒 Mediterranean','🇲🇽 Mexican/Latin','🥢 Asian','🦐 Seafood','🔥 BBQ / Grill','🌿 Farm-to-table','🌮 Street food / local','🥂 Fine dining','🍣 Sushi / Japanese','🥘 Indian / Middle Eastern'];
+
+// ─── RENDER ────────────────────────────────────
+const $=id=>document.getElementById(id);
+const app=$('app');
+
+function render(){
+  $('progressFill').style.width=((step/STEPS)*100)+'%';
+  $('progressLabel').textContent=step===STEPS?'All done! 🎉':`Step ${step} of ${STEPS}`;
+  let h='';
+  if(step===1) h=renderName();
+  else if(step===2) h=renderRegions();
+  else if(step===3) h=renderActivities();
+  else if(step===4) h=renderTravel();
+  else if(step===5) h=renderTiming();
+  else if(step===6) h=renderAccom();
+  else if(step===7) h=renderWild();
+  else if(step===8) h=renderSummary();
+  app.innerHTML=h;
+  bindEvents();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function nav(prev,next){
+  let n='';
+  if(prev) n+=`<button class="btn btn-prev" onclick="go(${step-1})">← Back</button>`;
+  if(next&&step<STEPS) n+=`<button class="btn btn-next" onclick="go(${step+1})">Next →</button>`;
+  if(step===STEPS-1) n+=`<button class="btn btn-submit" onclick="go(${step+1})">🎉 See My Results</button>`;
+  return `<div class="nav">${n}</div>`;
+}
+
+// Step 1 — Name
+function renderName(){
+  D.name=D.name||'';
+  return `<div class="card">
+    <h2>👋 First, who's this?</h2>
+    <p class="subtitle">So we know whose answers these are!</p>
+    <input class="name-input" type="text" placeholder="Your name (e.g. Jesse)" value="${D.name}" id="nameIn">
+  </div>${nav(false,true)}`;
+}
+
+// Step 2 — Regions
+function renderRegions(){
+  D.regions=D.regions||{};
+  let items=regions.map(r=>{
+    let v=D.regions[r.id]||0;
+    let hearts='';
+    for(let i=1;i<=5;i++) hearts+=`<div class="heart ${i<=v?'active':''}" data-r="${r.id}" data-v="${i}">${i<=v?'❤️':'🤍'}</div>`;
+    return `<div class="rating-item"><div class="rating-label">${r.n}${r.s?`<small>${r.s}</small>`:''}</div><div class="hearts">${hearts}</div></div>`;
+  }).join('');
+  return `<div class="card">
+    <h2>🌍 Where in the World?</h2>
+    <p class="subtitle">Rate each region: 1 heart = "meh" → 5 hearts = "DREAM destination!" Leave blank if no opinion.</p>
+    ${items}
+  </div>
+  <div class="card">
+    <h2>💭 Anywhere else?</h2>
+    <p class="subtitle">Any specific place or region calling your name that's not listed above?</p>
+    <textarea class="text-input" id="regionOther" placeholder="e.g. 'I've always wanted to see Patagonia' or 'What about the Amalfi Coast?'">${D.regionOther||''}</textarea>
+  </div>${nav(true,true)}`;
+}
+
+// Step 3 — Activities
+function renderActivities(){
+  D.activities=D.activities||{};
+  let items=activities.map(a=>{
+    let v=D.activities[a.id]||'';
+    let btns=lvls.map(l=>`<div class="ibtn ${v===l?'active':''}" data-a="${a.id}" data-v="${l}">${l}</div>`).join('');
+    return `<div class="interest-item"><div class="interest-label">${a.n}</div><div class="interest-btns">${btns}</div></div>`;
+  }).join('');
+  return `<div class="card">
+    <h2>🎯 What Lights You Up?</h2>
+    <p class="subtitle">How interested are you in each activity? Be honest — it helps us find the right fit!</p>
+    ${items}
+  </div>
+  <div class="card">
+    <h2>⭐ Anything else?</h2>
+    <p class="subtitle">Activities not listed above that you'd love to do on this trip?</p>
+    <textarea class="text-input" id="actOther" placeholder="e.g. 'horseback riding on a beach' or 'a family talent show night'">${D.actOther||''}</textarea>
+  </div>${nav(true,true)}`;
+}
+
+// Step 4 — Travel
+function renderTravel(){
+  D.flight=D.flight||'';D.travelDays=D.travelDays||'';D.connects=D.connects||'';
+  let fbtns=flightOpts.map(f=>`<div class="opt ${D.flight===f?'active':''}" data-g="flight" data-v="${f}">${f}</div>`).join('');
+  let dbtns=dayOpts.map(d=>`<div class="opt ${D.travelDays===d?'active':''}" data-g="travelDays" data-v="${d}">${d}</div>`).join('');
+  let cbtns=connectOpts.map(c=>`<div class="opt ${D.connects===c?'active':''}" data-g="connects" data-v="${c}">${c}</div>`).join('');
+  return `<div class="card">
+    <h2>✈️ Travel Reality</h2>
+    <p class="subtitle">How far are you willing to go to get there?</p>
+    <div class="field-label">Max flight time you're comfortable with:</div>
+    <div class="option-grid">${fbtns}</div>
+    <div class="field-label">How many travel days each way?</div>
+    <div class="option-grid">${dbtns}</div>
+    <div class="field-label">Connecting flights?</div>
+    <div class="option-grid">${cbtns}</div>
+  </div>${nav(true,true)}`;
+}
+
+// Step 5 — Timing
+function renderTiming(){
+  D.months=D.months||{};D.tripLen=D.tripLen||'';
+  const states=['','great','works','cant'];
+  const labels=['Tap','Great! ✅','Works 👍','Can\'t ❌'];
+  let mgrid=months.map((m,i)=>{
+    let st=D.months[m]||'';
+    return `<div class="mbtn ${st}" data-m="${m}">${m.slice(0,3)}</div>`;
+  }).join('');
+  let lbtns=tripLen.map(t=>`<div class="opt ${D.tripLen===t?'active':''}" data-g="tripLen" data-v="${t}">${t}</div>`).join('');
+  return `<div class="card">
+    <h2>📅 When Works for You?</h2>
+    <p class="subtitle">Tap each month to cycle through: Great → Works → Can't do it → (reset)</p>
+    <div class="month-grid">${mgrid}</div>
+    <div class="legend">
+      <span><span class="dot" style="background:var(--green)"></span> Great!</span>
+      <span><span class="dot" style="background:rgba(197,165,90,0.5)"></span> Works</span>
+      <span><span class="dot" style="background:var(--red)"></span> Can't</span>
+    </div>
+    <div class="field-label" style="margin-top:20px">Ideal trip length?</div>
+    <div class="option-grid">${lbtns}</div>
+  </div>${nav(true,true)}`;
+}
+
+// Step 6 — Accommodation & Vibe
+function renderAccom(){
+  D.homeFeatures=D.homeFeatures||[];D.vibe1=D.vibe1??50;D.vibe2=D.vibe2??50;D.vibe3=D.vibe3??50;D.cuisines=D.cuisines||[];D.dietary=D.dietary||'';
+  let hbtns=homeFeatures.map(f=>`<div class="chk ${D.homeFeatures.includes(f)?'active':''}" data-hf="${f}">${f}</div>`).join('');
+  let cbtns=cuisines.map(c=>`<div class="chk ${D.cuisines.includes(c)?'active':''}" data-cu="${c}">${c}</div>`).join('');
+  return `<div class="card">
+    <h2>🏡 The Home Base</h2>
+    <p class="subtitle">What matters most in the villa/estate? Pick all that appeal.</p>
+    <div class="check-grid" id="homeGrid">${hbtns}</div>
+  </div>
+  <div class="card">
+    <h2>🎚️ Trip Vibe</h2>
+    <p class="subtitle">Slide toward what you prefer — there are no wrong answers!</p>
+    <div class="slider-row"><label>Energy Level</label><input type="range" min="0" max="100" value="${D.vibe1}" id="vibe1"><div class="slider-ends"><span>🧘 Full relaxation</span><span>🧗 Max adventure</span></div></div>
+    <div class="slider-row"><label>Experience Style</label><input type="range" min="0" max="100" value="${D.vibe2}" id="vibe2"><div class="slider-ends"><span>🏛️ Deep culture</span><span>🏖️ Resort luxury</span></div></div>
+    <div class="slider-row"><label>Planning Style</label><input type="range" min="0" max="100" value="${D.vibe3}" id="vibe3"><div class="slider-ends"><span>📋 Planned itinerary</span><span>🌊 Go with the flow</span></div></div>
+  </div>
+  <div class="card">
+    <h2>🍽️ Food & Dining</h2>
+    <p class="subtitle">Pick cuisines you'd love to explore on the trip.</p>
+    <div class="check-grid" id="cuisineGrid">${cbtns}</div>
+    <div class="field-label">Any dietary needs or restrictions?</div>
+    <textarea class="text-input" id="dietary" placeholder="e.g. vegetarian, gluten-free, shellfish allergy…">${D.dietary}</textarea>
+  </div>${nav(true,true)}`;
+}
+
+// Step 7 — Wild Card
+function renderWild(){
+  D.dream=D.dream||'';D.dealbreaker=D.dealbreaker||'';D.notes=D.notes||'';
+  return `<div class="card">
+    <h2>💬 The Fun Stuff</h2>
+    <p class="subtitle">Last step before the big reveal!</p>
+    <div class="field-label">✨ In one sentence, what's your dream trip experience?</div>
+    <textarea class="text-input" id="dream" placeholder="e.g. 'Diving a shipwreck in the morning, pottery class in the afternoon, family dinner under the stars at night.'">${D.dream}</textarea>
+    <div class="field-label">🚫 Any dealbreakers?</div>
+    <textarea class="text-input" id="dealbreaker" placeholder="e.g. 'No extreme heat' or 'Needs to be wheelchair accessible for part of the trip'">${D.dealbreaker}</textarea>
+    <div class="field-label">📝 Anything else on your mind?</div>
+    <textarea class="text-input" id="notes" placeholder="Ideas, concerns, must-haves, or just general vibes…">${D.notes}</textarea>
+  </div>
+  <div class="inspiration">
+    <h3>💡 Need inspiration?</h3>
+    <p>Jesse's slide deck explored Portugal (Cascais & Sintra), Australia (Hamilton Island), Costa Rica (Papagayo), Crete (Chania), and Mexico (La Paz). But this trip could go <em>anywhere</em> — that's what this survey is for!</p>
+  </div>${nav(true,true)}`;
+}
+
+// Step 8 — Summary
+function renderSummary(){
+  let txt=buildSummary();
+  return `<div class="card">
+    <h2>🎉 Here's Your Profile, ${D.name||'Adventurer'}!</h2>
+    <p class="subtitle">Review your answers below. Copy or download them to share with the group.</p>
+    <div class="summary-box" id="summaryBox">${txt}</div>
+    <button class="btn btn-copy" onclick="copyResults()">📋 Copy to Clipboard</button>
+    <button class="btn btn-download" onclick="downloadResults()">💾 Download JSON</button>
+  </div>
+  <div class="card" style="text-align:center">
+    <h2>🙏 Thank You!</h2>
+    <p class="subtitle">Your input will help us find the perfect destination for the whole family. Share your results in the group chat!</p>
+    <div class="nav"><button class="btn btn-prev" onclick="go(1)">↩️ Start Over</button><button class="btn btn-next" onclick="clearAll()">🗑️ Clear & Reset</button></div>
+  </div>`;
+}
+
+function buildSummary(){
+  let s=`✈️ TRIP PREFERENCES — ${D.name||'(no name)'}\n${'═'.repeat(40)}\n\n`;
+  // Regions
+  s+=`🌍 TOP REGIONS:\n`;
+  let ranked=regions.filter(r=>(D.regions||{})[r.id]>0).sort((a,b)=>(D.regions[b.id]||0)-(D.regions[a.id]||0));
+  if(ranked.length) ranked.forEach(r=>s+=`  ${'❤️'.repeat(D.regions[r.id])} ${r.n}\n`);
+  else s+=`  (none rated)\n`;
+  if(D.regionOther) s+=`  💭 Also mentioned: ${D.regionOther}\n`;
+  // Activities
+  s+=`\n🎯 ACTIVITIES:\n`;
+  let mustDo=[],into=[],meh=[];
+  Object.entries(D.activities||{}).forEach(([k,v])=>{
+    let a=activities.find(x=>x.id===k);if(!a)return;
+    if(v==='MUST DO') mustDo.push(a.n);
+    else if(v==='Into it') into.push(a.n);
+    else if(v==='Meh') meh.push(a.n);
+  });
+  if(mustDo.length) s+=`  🔥 MUST DO: ${mustDo.join(', ')}\n`;
+  if(into.length) s+=`  👍 Into it: ${into.join(', ')}\n`;
+  if(meh.length) s+=`  😐 Meh: ${meh.join(', ')}\n`;
+  if(D.actOther) s+=`  ⭐ Also wants: ${D.actOther}\n`;
+  // Travel
+  s+=`\n✈️ TRAVEL:\n`;
+  if(D.flight) s+=`  Max flight: ${D.flight}\n`;
+  if(D.travelDays) s+=`  Travel days: ${D.travelDays}\n`;
+  if(D.connects) s+=`  Connections: ${D.connects}\n`;
+  // Timing
+  s+=`\n📅 TIMING:\n`;
+  let great=[],works=[],cant=[];
+  Object.entries(D.months||{}).forEach(([m,v])=>{
+    if(v==='great') great.push(m.slice(0,3));
+    else if(v==='works') works.push(m.slice(0,3));
+    else if(v==='cant') cant.push(m.slice(0,3));
+  });
+  if(great.length) s+=`  ✅ Great: ${great.join(', ')}\n`;
+  if(works.length) s+=`  👍 Works: ${works.join(', ')}\n`;
+  if(cant.length) s+=`  ❌ Can't: ${cant.join(', ')}\n`;
+  if(D.tripLen) s+=`  📏 Trip length: ${D.tripLen}\n`;
+  // Vibe
+  s+=`\n🎚️ VIBE:\n`;
+  s+=`  Energy: ${D.vibe1<=30?'🧘 Relaxation':D.vibe1>=70?'🧗 Adventure':'⚖️ Balanced'} (${D.vibe1}/100)\n`;
+  s+=`  Style: ${D.vibe2<=30?'🏛️ Cultural':D.vibe2>=70?'🏖️ Resort':'⚖️ Mix'} (${D.vibe2}/100)\n`;
+  s+=`  Planning: ${D.vibe3<=30?'📋 Structured':D.vibe3>=70?'🌊 Spontaneous':'⚖️ Flexible'} (${D.vibe3}/100)\n`;
+  // Home
+  if((D.homeFeatures||[]).length) s+=`\n🏡 HOME MUST-HAVES:\n  ${D.homeFeatures.join(', ')}\n`;
+  // Food
+  if((D.cuisines||[]).length) s+=`\n🍽️ CUISINES:\n  ${D.cuisines.join(', ')}\n`;
+  if(D.dietary) s+=`  ⚠️ Dietary: ${D.dietary}\n`;
+  // Wild
+  s+=`\n💬 WILD CARD:\n`;
+  if(D.dream) s+=`  ✨ Dream: ${D.dream}\n`;
+  if(D.dealbreaker) s+=`  🚫 Dealbreaker: ${D.dealbreaker}\n`;
+  if(D.notes) s+=`  📝 Notes: ${D.notes}\n`;
+  return s;
+}
+
+// ─── EVENTS ────────────────────────────────────
+function bindEvents(){
+  // Name
+  const ni=document.getElementById('nameIn');
+  if(ni) ni.addEventListener('input',e=>{D.name=e.target.value;save()});
+  // Hearts
+  document.querySelectorAll('.heart').forEach(h=>h.addEventListener('click',e=>{
+    const r=h.dataset.r, v=parseInt(h.dataset.v);
+    if(!D.regions) D.regions={};
+    D.regions[r]=D.regions[r]===v?v-1:v;
+    save();render();
+  }));
+  // Activities
+  document.querySelectorAll('.ibtn').forEach(b=>b.addEventListener('click',()=>{
+    if(!D.activities) D.activities={};
+    D.activities[b.dataset.a]=b.dataset.v;save();render();
+  }));
+  // Options (flight, days, connects, tripLen)
+  document.querySelectorAll('.opt').forEach(b=>b.addEventListener('click',()=>{
+    D[b.dataset.g]=b.dataset.v;save();render();
+  }));
+  // Months
+  document.querySelectorAll('.mbtn').forEach(b=>b.addEventListener('click',()=>{
+    if(!D.months) D.months={};
+    const cycle=['','great','works','cant'];
+    let cur=cycle.indexOf(D.months[b.dataset.m]||'');
+    D.months[b.dataset.m]=cycle[(cur+1)%4];
+    save();render();
+  }));
+  // Checkboxes - home
+  document.querySelectorAll('[data-hf]').forEach(b=>b.addEventListener('click',()=>{
+    if(!D.homeFeatures) D.homeFeatures=[];
+    let f=b.dataset.hf;
+    if(D.homeFeatures.includes(f)) D.homeFeatures=D.homeFeatures.filter(x=>x!==f);
+    else D.homeFeatures.push(f);
+    save();render();
+  }));
+  // Checkboxes - cuisine
+  document.querySelectorAll('[data-cu]').forEach(b=>b.addEventListener('click',()=>{
+    if(!D.cuisines) D.cuisines=[];
+    let c=b.dataset.cu;
+    if(D.cuisines.includes(c)) D.cuisines=D.cuisines.filter(x=>x!==c);
+    else D.cuisines.push(c);
+    save();render();
+  }));
+  // Sliders
+  ['vibe1','vibe2','vibe3'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el) el.addEventListener('input',e=>{D[id]=parseInt(e.target.value);save()});
+  });
+  // Textareas
+  ['regionOther','actOther','dream','dealbreaker','notes','dietary'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el) el.addEventListener('input',e=>{D[id]=e.target.value;save()});
+  });
+}
+
+function go(s){
+  // save textareas before navigating
+  ['regionOther','actOther','dream','dealbreaker','notes','dietary'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el) D[id]=el.value;
+  });
+  save();
+  step=Math.max(1,Math.min(STEPS,s));
+  if(step===STEPS) launchConfetti();
+  render();
+}
+
+function copyResults(){
+  const txt=buildSummary();
+  navigator.clipboard.writeText(txt).then(()=>{
+    const t=$('toast');t.classList.add('show');
+    setTimeout(()=>t.classList.remove('show'),2200);
+  });
+}
+
+function downloadResults(){
+  const blob=new Blob([JSON.stringify(D,null,2)],{type:'application/json'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;a.download=`${(D.name||'unknown').toLowerCase().replace(/\s+/g,'-')}-trip-preferences.json`;
+  a.click();URL.revokeObjectURL(url);
+}
+
+function clearAll(){
+  if(confirm('Clear all your answers and start fresh?')){
+    localStorage.removeItem('toddTrip2027');D={};step=1;render();
+  }
+}
+
+// ─── CONFETTI 🎉 ──────────────────────────────
+function launchConfetti(){
+  const c=$('confetti'),ctx=c.getContext('2d');
+  c.width=window.innerWidth;c.height=window.innerHeight;
+  c.style.display='block';
+  const pieces=[];const colors=['#c5a55a','#e8c97a','#4ade80','#60a5fa','#f87171','#fbbf24','#a78bfa','#fb923c'];
+  for(let i=0;i<120;i++) pieces.push({x:Math.random()*c.width,y:Math.random()*c.height-c.height,w:Math.random()*8+4,h:Math.random()*6+3,color:colors[Math.floor(Math.random()*colors.length)],vx:(Math.random()-0.5)*4,vy:Math.random()*4+2,rot:Math.random()*360,vr:(Math.random()-0.5)*8});
+  let frames=0;
+  function draw(){
+    ctx.clearRect(0,0,c.width,c.height);
+    pieces.forEach(p=>{
+      p.x+=p.vx;p.y+=p.vy;p.rot+=p.vr;p.vy+=0.05;
+      ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot*Math.PI/180);
+      ctx.fillStyle=p.color;ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);ctx.restore();
+    });
+    frames++;
+    if(frames<180) requestAnimationFrame(draw);
+    else{ctx.clearRect(0,0,c.width,c.height);c.style.display='none';}
+  }
+  draw();
+}
+
+// ─── INIT ──────────────────────────────────────
+render();
+</script>
 </body>
 </html>
