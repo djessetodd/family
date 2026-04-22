@@ -4,92 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mom and Dad's Excellent Adventure</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #333;
-            color: #fff;
-            margin: 0;
-            padding: 10px;
-        }
-        h1 {
-            color: gold;
-        }
-        .step {
-            display: none;
-        }
-        .active {
-            display: block;
-        }
-        .button {
-            background-color: gold;
-            color: black;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-        }
-        .button:hover {
-            background-color: darkgoldenrod;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <h1>Mom and Dad's Excellent Adventure</h1>
-    <div id="survey">
-        <div class="step active" data-step="1">
-            <h2>Step 1: Choose your destinations</h2>
-            <label><input type="checkbox" name="destinations" value="Spain & Portugal"> Spain & Portugal</label><br>
-            <label><input type="checkbox" name="destinations" value="Austria or Germany"> Austria or Germany</label><br>
-            <label><input type="checkbox" name="destinations" value="Northern Italy"> Northern Italy</label><br>
-            <label><input type="checkbox" name="destinations" value="Southern France"> Southern France</label><br>
-            <label><input type="checkbox" name="destinations" value="Crete"> Crete</label><br>
-            <label><input type="checkbox" name="destinations" value="Costa Rica"> Costa Rica</label><br>
-            <label><input type="checkbox" name="destinations" value="La Paz Mexico"> La Paz Mexico</label><br>
-            <label><input type="checkbox" name="destinations" value="Other"> Other</label><br>
-            <button class="button" onclick="nextStep(1)">Next</button>
+    <div class="container">
+        <h1>Mom and Dad's Excellent Adventure</h1>
+
+        <div class="destinations">
+            <h2>Destinations</h2>
+            <ul>
+                <li>Austria or Germany</li>
+                <li>Italy</li>
+                <li>France</li>
+                <li>Spain</li>
+                <li>Greece</li>
+                <li>Portugal</li>
+                <li>Switzerland</li>
+                <li>Netherlands</li>
+            </ul>
         </div>
-        <div class="step" data-step="2">
-            <h2>Step 2: Choose your activities</h2>
-            <label><input type="checkbox" name="activities" value="Scuba/snorkeling"> Scuba/snorkeling</label><br>
-            <label><input type="checkbox" name="activities" value="Hiking"> Hiking</label><br>
-            <label><input type="checkbox" name="activities" value="Cooking classes"> Cooking classes</label><br>
-            <label><input type="checkbox" name="activities" value="Wine tasting"> Wine tasting</label><br>
-            <label><input type="checkbox" name="activities" value="Beach/relaxation"> Beach/relaxation</label><br>
-            <label><input type="checkbox" name="activities" value="Museums"> Museums</label><br>
-            <label><input type="checkbox" name="activities" value="Architecture"> Architecture</label><br>
-            <label><input type="checkbox" name="activities" value="Spa/wellness"> Spa/wellness</label><br>
-            <label><input type="checkbox" name="activities" value="Photography"> Photography</label><br>
-            <label><input type="checkbox" name="activities" value="Fishing"> Fishing</label><br>
-            <label><input type="checkbox" name="activities" value="Crafts - pottery/painting/woodworking"> Crafts - pottery/painting/woodworking</label><br>
-            <label><input type="checkbox" name="activities" value="Music - live music/playing instruments"> Music - live music/playing instruments</label><br>
-            <button class="button" onclick="nextStep(2)">Next</button>
+
+        <div class="activities">
+            <h2>Activities</h2>
+            <button>Crafts (pottery, painting, woodworking)</button>
+            <button>Music (live music, playing instruments)</button>
+            <button>Hiking</button>
+            <button>Cooking Classes</button>
+            <button>Cultural Tours</button>
+            <button>Cycling</button>
+            <button>Wine Tastings</button>
+            <button>Beach Days</button>
+            <button>Fishing</button>
+            <button>Shopping</button>
+            <button>Photography</button>
+            <button>Relaxation</button>
         </div>
-        <div class="step" data-step="3">
-            <h2>Step 3: Additional questions</h2>
-            <p>Additional questions can go here.</p>
-            <button class="button" onclick="nextStep(3)">Next</button>
+
+        <div class="ratings">
+            <h2>Your Ratings</h2>
+            <div class="heart-rating">❤️❤️❤️❤️❤️</div>
         </div>
-        <div class="step" data-step="4">
-            <h2>Step 4: Review your selections</h2>
-            <p>Your selections can be reviewed here.</p>
-            <button class="button" onclick="submitSurvey()">Submit</button>
+
+        <div class="month-grid">
+            <h2>Select a Month</h2>
+            <div class="grid">
+                <!-- Create a grid layout for months -->
+            </div>
+        </div>
+
+        <div class="vibe-sliders">
+            <h2>Vibe Selection</h2>
+            <input type="range" min="1" max="5" value="3" /> <!-- Slider for vibe -->
         </div>
     </div>
+
     <script>
-        let currentStep = 1;
-        const totalSteps = 4;
-        function nextStep(step) {
-            document.querySelector(`.step[data-step="${step}"]`).classList.remove('active');
-            currentStep++;
-            if (currentStep <= totalSteps) {
-                document.querySelector(`.step[data-step="${currentStep}"]`).classList.add('active');
-            }
-        }
-        function submitSurvey() {
-            const surveyData = {};
-            // Collect data logic here
-            localStorage.setItem('momdadAdventure', JSON.stringify(surveyData));
-            alert('Survey submitted!');
+        // Store data in localStorage
+        localStorage.setItem('momdadAdventure', JSON.stringify({
+            destinations: [...],
+            activities: [...],
+        }));
+
+        // Confetti animation
+        function showConfetti() {
+            // Trigger confetti animation
         }
     </script>
 </body>
