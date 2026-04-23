@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--gold:#c5a55a;--dark:#1a1a2e;--card:#2a2a40;--warm:#f5e6c8;--accent:#e8c97a;--green:#4ade80;--red:#f87171;--blue:#60a5fa}
+:root{--gold:#c5a55a;--dark:#1a1a2e;--card:#2a2a40;--warm:#f5e6c8;--accent:#e8c97a;--green:#4ade80;--red:#f87171}
 body{font-family:'Inter',sans-serif;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#1a1a2e 100%);color:#f0e6d3;min-height:100vh;padding-bottom:120px}
 h1,h2,h3{font-family:'Playfair Display',serif}
 .header{text-align:center;padding:32px 20px 14px;background:linear-gradient(180deg,rgba(197,165,90,0.18),transparent)}
@@ -30,22 +30,22 @@ textarea.text-input{resize:vertical;min-height:70px;font-size:0.9em}
 .rating-label{font-size:0.88em;flex:1;padding-right:8px;line-height:1.3}
 .rating-label small{display:block;font-size:0.8em;opacity:0.5;margin-top:2px}
 .hearts{display:flex;gap:3px}
-.heart{width:30px;height:30px;border-radius:50%;border:2px solid rgba(197,165,90,0.25);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:13px;transition:all 0.2s}
+.heart{width:30px;height:30px;border-radius:50%;border:2px solid rgba(197,165,90,0.25);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:13px;transition:all 0.2s;user-select:none}
 .heart.active{background:var(--gold);border-color:var(--gold);transform:scale(1.1)}
 .heart:hover{border-color:var(--gold);transform:scale(1.08)}
 .interest-item{display:flex;align-items:center;justify-content:space-between;padding:7px 0;border-bottom:1px solid rgba(255,255,255,0.04);gap:6px}
 .interest-item:last-child{border-bottom:none}
 .interest-label{font-size:0.85em;flex:1;min-width:0}
 .interest-btns{display:flex;gap:3px;flex-shrink:0}
-.ibtn{padding:5px 7px;border-radius:8px;border:1px solid rgba(197,165,90,0.18);background:transparent;color:var(--warm);cursor:pointer;font-size:0.68em;transition:all 0.2s;font-family:'Inter',sans-serif}
+.ibtn{padding:5px 7px;border-radius:8px;border:1px solid rgba(197,165,90,0.18);background:transparent;color:var(--warm);cursor:pointer;font-size:0.68em;transition:all 0.2s;font-family:'Inter',sans-serif;white-space:nowrap}
 .ibtn.active{background:var(--gold);color:var(--dark);border-color:var(--gold);font-weight:700}
 .ibtn:hover{border-color:var(--gold)}
 .option-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
-.opt{padding:10px 15px;border-radius:12px;border:1.5px solid rgba(197,165,90,0.2);background:rgba(255,255,255,0.03);color:var(--warm);cursor:pointer;font-size:0.84em;transition:all 0.2s;font-family:'Inter',sans-serif}
+.opt{padding:10px 15px;border-radius:12px;border:1.5px solid rgba(197,165,90,0.2);background:rgba(255,255,255,0.03);color:var(--warm);cursor:pointer;font-size:0.84em;transition:all 0.2s;font-family:'Inter',sans-serif;user-select:none}
 .opt.active{background:var(--gold);color:var(--dark);border-color:var(--gold);font-weight:600}
 .opt:hover{border-color:var(--gold)}
 .month-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:10px}
-.mbtn{padding:10px 6px;border-radius:10px;border:1.5px solid rgba(197,165,90,0.18);background:rgba(255,255,255,0.03);color:var(--warm);cursor:pointer;font-size:0.82em;text-align:center;transition:all 0.2s;font-family:'Inter',sans-serif}
+.mbtn{padding:10px 6px;border-radius:10px;border:1.5px solid rgba(197,165,90,0.18);background:rgba(255,255,255,0.03);color:var(--warm);cursor:pointer;font-size:0.82em;text-align:center;transition:all 0.2s;font-family:'Inter',sans-serif;user-select:none}
 .mbtn.great{background:var(--green);color:#1a1a2e;border-color:var(--green);font-weight:700}
 .mbtn.works{background:rgba(197,165,90,0.45);color:#fff;border-color:var(--gold);font-weight:500}
 .mbtn.cant{background:var(--red);color:#fff;border-color:var(--red);opacity:0.85;font-weight:500}
@@ -53,7 +53,7 @@ textarea.text-input{resize:vertical;min-height:70px;font-size:0.9em}
 .legend span{display:flex;align-items:center;gap:4px}
 .legend .dot{width:10px;height:10px;border-radius:50%;display:inline-block}
 .check-grid{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px}
-.chk{padding:9px 14px;border-radius:10px;border:1.5px solid rgba(197,165,90,0.18);background:rgba(255,255,255,0.03);color:var(--warm);cursor:pointer;font-size:0.82em;transition:all 0.2s;font-family:'Inter',sans-serif}
+.chk{padding:9px 14px;border-radius:10px;border:1.5px solid rgba(197,165,90,0.18);background:rgba(255,255,255,0.03);color:var(--warm);cursor:pointer;font-size:0.82em;transition:all 0.2s;font-family:'Inter',sans-serif;user-select:none}
 .chk.active{background:var(--gold);color:var(--dark);border-color:var(--gold);font-weight:600}
 .chk:hover{border-color:var(--gold)}
 .slider-row{margin:16px 0}
@@ -70,8 +70,8 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;heigh
 .btn-submit{background:linear-gradient(135deg,var(--gold),#d4af37);color:var(--dark);flex:1;font-size:1.05em;padding:15px}
 .btn-copy{background:var(--gold);color:var(--dark);width:100%;padding:15px;margin-top:10px;font-size:1em}
 .btn-reset{background:rgba(255,255,255,0.08);color:var(--warm);width:100%;padding:12px;margin-top:8px;font-size:0.85em;opacity:0.7}
-.summary-box{background:rgba(0,0,0,0.35);border-radius:14px;padding:16px;font-size:0.78em;line-height:1.7;white-space:pre-wrap;max-height:420px;overflow-y:auto;margin-top:14px;border:1px solid rgba(197,165,90,0.1)}
-.copied-toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--green);color:#1a1a2e;padding:12px 28px;border-radius:14px;font-weight:700;font-size:0.95em;transition:transform 0.4s ease;z-index:9999}
+.summary-box{background:rgba(0,0,0,0.35);border-radius:14px;padding:16px;font-size:0.78em;line-height:1.7;white-space:pre-wrap;max-height:420px;overflow-y:auto;margin-top:14px;border:1px solid rgba(197,165,90,0.1);font-family:'Inter',monospace}
+.copied-toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--green);color:#1a1a2e;padding:12px 28px;border-radius:14px;font-weight:700;font-size:0.95em;transition:transform 0.4s ease;z-index:9999;box-shadow:0 8px 30px rgba(0,0,0,0.4)}
 .copied-toast.show{transform:translateX(-50%) translateY(0)}
 .inspiration{background:rgba(197,165,90,0.06);border:1px solid rgba(197,165,90,0.12);border-radius:12px;padding:14px;margin-top:14px;margin-bottom:18px}
 .inspiration h3{color:var(--accent);font-size:0.9em;margin-bottom:6px;font-family:'Playfair Display',serif}
@@ -93,34 +93,29 @@ canvas#confetti{position:fixed;top:0;left:0;width:100%;height:100%;pointer-event
 </div>
 
 <div class="section" id="app"></div>
-<div class="copied-toast" id="toast">✅ Copied to clipboard!</div>
+<div class="copied-toast" id="toast"></div>
 <canvas id="confetti"></canvas>
 
 <script>
-const STEPS = 8;
-let step = 1;
-let D = JSON.parse(localStorage.getItem('momdadAdventure') || '{}');
-function save() { localStorage.setItem('momdadAdventure', JSON.stringify(D)); }
+var STEPS = 8;
+var step = 1;
+var D = JSON.parse(localStorage.getItem('momdadAdventure') || '{}');
+var app = document.getElementById('app');
 
-const regions = [
-  { id: 'west_europe', n: '🇪🇺 Western Europe', s: 'France, Spain, Italy, Portugal' },
-  { id: 'mediterranean', n: '🇬🇷 Mediterranean', s: 'Greece, Crete, Croatia, Turkey' },
-  { id: 'uk_ireland', n: '🇬🇧 UK & Ireland', s: '' },
-  { id: 'scandinavia', n: '🇳🇴 Scandinavia & Iceland', s: '' },
-  { id: 'central_europe', n: '🇨🇿 Central/Eastern Europe', s: 'Czech Republic, Hungary, Poland' },
-  { id: 'mexico', n: '🇲🇽 Mexico', s: 'Baja, Oaxaca, Riviera' },
-  { id: 'central_america', n: '🇨🇷 Central America & Caribbean', s: 'Costa Rica, Belize, islands' },
-  { id: 'south_america', n: '🇧🇷 South America', s: 'Argentina, Colombia, Peru' },
-  { id: 'pacific', n: '🏝️ Pacific Islands', s: 'Fiji, Tahiti, Cook Islands' },
-  { id: 'se_asia', n: '🇹🇭 Southeast Asia', s: 'Thailand, Vietnam, Bali' },
-  { id: 'japan_korea', n: '🇯🇵 Japan & South Korea', s: '' },
-  { id: 'australia_nz', n: '🇦🇺 Australia & New Zealand', s: '' },
-  { id: 'canada', n: '🇨🇦 Canada', s: 'BC, Maritimes, Rockies' },
-  { id: 'us_destinations', n: '🇺🇸 US Destinations', s: 'Alaska, National Parks' },
-  { id: 'africa', n: '🌍 Africa', s: 'Morocco, South Africa, safari' }
+function $(id) { return document.getElementById(id); }
+function save() { localStorage.setItem('momdadAdventure', JSON.stringify(D)); }
+function esc(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
+var regions = [
+  { id: 'spain_portugal', n: '🇪🇸 Spain / Portugal', s: '' },
+  { id: 'south_france', n: '🇫🇷 Southern France', s: '' },
+  { id: 'alps', n: '🏔️ The Alps', s: 'Italy, Switzerland, Austria' },
+  { id: 'crete', n: '🇬🇷 Crete', s: '' },
+  { id: 'costa_rica', n: '🇨🇷 Costa Rica', s: '' },
+  { id: 'la_paz', n: '🇲🇽 La Paz, Mexico', s: '' }
 ];
 
-const activities = [
+var activities = [
   { id: 'active', n: '🏔️ Active outdoors (hiking, cycling, golf)' },
   { id: 'architecture', n: '🏰 Architecture & culture' },
   { id: 'relaxation', n: '🏖️ Beach / spa / relaxation' },
@@ -133,41 +128,45 @@ const activities = [
   { id: 'wine', n: '🍷 Wine / beer / spirits tasting' }
 ];
 
-const lvls = ['Skip', 'Meh', 'Into it', 'MUST DO'];
-const flightOpts = ['4 hrs', '6 hrs', '8 hrs', '10 hrs', '12 hrs', '15+ hrs', 'Anywhere worth it! ✈️'];
-const dayOpts = ['1 day each way', '2 days each way', 'Whatever it takes'];
-const connectOpts = ['Nonstop preferred', 'Connections fine', "Don't care"];
-const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-const tripLen = ['5 days', '7 days', '10 days', '14 days', 'Flexible'];
-const homeFeatures = ['🏊 Pool','🌊 Ocean/water view','⛰️ Mountain view','🚶 Walking to town','🍳 Large kitchen','🌿 Outdoor dining','🎮 Game room','♨️ Hot tub','🌺 Garden/yard','📶 Good WiFi','🛏️ Ensuite bedrooms'];
-const cuisines = ['🇮🇹 Italian','🇫🇷 French','🫒 Mediterranean','🇲🇽 Mexican/Latin','🥢 Asian','🦐 Seafood','🔥 BBQ / Grill','🌿 Farm-to-table','🌮 Street food','🥂 Fine dining'];
-
-const $ = id => document.getElementById(id);
-const app = $('app');
+var lvls = ['Skip', 'Meh', 'Into it', 'MUST DO'];
+var flightOpts = ['6 hours or less', 'Up to 10 hours', 'Up to 15 hours'];
+var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+var tripLen = ['5 days', '7 days', '10 days', '14 days', 'Flexible'];
+var homeFeatures = ['🏊 Pool','🌊 Ocean/water view','⛰️ Mountain view','🚶 Walking to town','🍳 Large kitchen','🌿 Outdoor dining','🎮 Game room','♨️ Hot tub','🌺 Garden/yard','📶 Good WiFi','🛏️ Ensuite bedrooms'];
+var cuisines = ['🇮🇹 Italian','🇫🇷 French','🫒 Mediterranean','🇲🇽 Mexican/Latin','🥢 Asian','🦐 Seafood','🔥 BBQ / Grill','🌿 Farm-to-table','🌮 Street food','🥂 Fine dining'];
+var textFields = ['regionOther', 'actOther', 'dream', 'dealbreaker', 'notes', 'dietary'];
 
 function render() {
   $('progressFill').style.width = ((step / STEPS) * 100) + '%';
   $('progressLabel').textContent = step === STEPS ? 'All done! 🎉' : 'Step ' + step + ' of ' + STEPS;
-  let h = '';
-  if (step === 1) h = renderName();
-  else if (step === 2) h = renderRegions();
-  else if (step === 3) h = renderActivities();
-  else if (step === 4) h = renderTravel();
-  else if (step === 5) h = renderTiming();
-  else if (step === 6) h = renderAccom();
-  else if (step === 7) h = renderWild();
-  else if (step === 8) h = renderSummary();
-  app.innerHTML = h;
+  var renderers = [null, renderName, renderRegions, renderActivities, renderTravel, renderTiming, renderAccom, renderWild, renderSummary];
+  app.innerHTML = renderers[step]();
   bindEvents();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function navButtons(prev, next) {
-  let n = '';
+  var n = '';
   if (prev) n += '<button class="btn btn-prev" onclick="go(' + (step - 1) + ')">&#8592; Back</button>';
   if (next && step < STEPS - 1) n += '<button class="btn btn-next" onclick="go(' + (step + 1) + ')">Next &#8594;</button>';
   if (step === STEPS - 1) n += '<button class="btn btn-submit" onclick="go(' + (step + 1) + ')">&#127881; See My Results</button>';
   return '<div class="nav">' + n + '</div>';
+}
+
+function makeOpts(arr, group, current) {
+  var h = '';
+  for (var i = 0; i < arr.length; i++) {
+    h += '<div class="opt ' + (current === arr[i] ? 'active' : '') + '" data-g="' + group + '" data-v="' + esc(arr[i]) + '">' + arr[i] + '</div>';
+  }
+  return h;
+}
+
+function makeChecks(arr, type, selected) {
+  var h = '';
+  for (var i = 0; i < arr.length; i++) {
+    h += '<div class="chk ' + (selected.indexOf(arr[i]) >= 0 ? 'active' : '') + '" data-t="' + type + '" data-v="' + esc(arr[i]) + '">' + arr[i] + '</div>';
+  }
+  return h;
 }
 
 // ── Step 1: Name ──
@@ -183,37 +182,37 @@ function renderName() {
 // ── Step 2: Regions ──
 function renderRegions() {
   D.regions = D.regions || {};
-  let items = '';
-  for (let i = 0; i < regions.length; i++) {
-    let r = regions[i];
-    let v = D.regions[r.id] || 0;
-    let hearts = '';
-    for (let j = 1; j <= 5; j++) {
+  var items = '';
+  for (var i = 0; i < regions.length; i++) {
+    var r = regions[i];
+    var v = D.regions[r.id] || 0;
+    var hearts = '';
+    for (var j = 1; j <= 5; j++) {
       hearts += '<div class="heart ' + (j <= v ? 'active' : '') + '" data-r="' + r.id + '" data-v="' + j + '">' + (j <= v ? '❤️' : '🤍') + '</div>';
     }
     items += '<div class="rating-item"><div class="rating-label">' + r.n + (r.s ? '<small>' + r.s + '</small>' : '') + '</div><div class="hearts">' + hearts + '</div></div>';
   }
   return '<div class="card">' +
     '<h2>&#127757; Where in the World?</h2>' +
-    '<p class="subtitle">Rate each region: 1 heart = "meh" &#8594; 5 hearts = "DREAM destination!" Leave blank if no opinion.</p>' +
+    '<p class="subtitle">Rate each destination: 1 heart = "meh" &#8594; 5 hearts = "DREAM destination!" Leave blank if no opinion.</p>' +
     items +
     '</div>' +
     '<div class="card">' +
-    '<h2>&#128173; Anywhere else?</h2>' +
-    '<p class="subtitle">Any specific place calling your name that\'s not listed?</p>' +
-    '<textarea class="text-input" id="regionOther" placeholder="e.g. \'I\'ve always wanted to see Patagonia\' or \'What about the Amalfi Coast?\'">' + esc(D.regionOther || '') + '</textarea>' +
+    '<h2>&#128173; Somewhere else?</h2>' +
+    '<p class="subtitle">Any other destination calling your name?</p>' +
+    '<textarea class="text-input" id="regionOther" placeholder="e.g. \'What about the Amalfi Coast?\' or \'I\'ve always wanted to see Patagonia\'">' + esc(D.regionOther || '') + '</textarea>' +
     '</div>' + navButtons(true, true);
 }
 
 // ── Step 3: Activities ──
 function renderActivities() {
   D.activities = D.activities || {};
-  let items = '';
-  for (let i = 0; i < activities.length; i++) {
-    let a = activities[i];
-    let v = D.activities[a.id] || '';
-    let btns = '';
-    for (let j = 0; j < lvls.length; j++) {
+  var items = '';
+  for (var i = 0; i < activities.length; i++) {
+    var a = activities[i];
+    var v = D.activities[a.id] || '';
+    var btns = '';
+    for (var j = 0; j < lvls.length; j++) {
       btns += '<div class="ibtn ' + (v === lvls[j] ? 'active' : '') + '" data-a="' + a.id + '" data-v="' + lvls[j] + '">' + lvls[j] + '</div>';
     }
     items += '<div class="interest-item"><div class="interest-label">' + a.n + '</div><div class="interest-btns">' + btns + '</div></div>';
@@ -233,17 +232,11 @@ function renderActivities() {
 // ── Step 4: Travel ──
 function renderTravel() {
   D.flight = D.flight || '';
-  D.travelDays = D.travelDays || '';
-  D.connects = D.connects || '';
   return '<div class="card">' +
-    '<h2>&#9992;&#65039; Travel Reality</h2>' +
-    '<p class="subtitle">How far are you willing to go?</p>' +
+    '<h2>&#9992;&#65039; Travel Logistics</h2>' +
+    '<p class="subtitle">How far are you willing to fly?</p>' +
     '<div class="field-label">Max flight time you\'re comfortable with:</div>' +
     '<div class="option-grid">' + makeOpts(flightOpts, 'flight', D.flight) + '</div>' +
-    '<div class="field-label">How many travel days each way?</div>' +
-    '<div class="option-grid">' + makeOpts(dayOpts, 'travelDays', D.travelDays) + '</div>' +
-    '<div class="field-label">Connecting flights?</div>' +
-    '<div class="option-grid">' + makeOpts(connectOpts, 'connects', D.connects) + '</div>' +
     '</div>' + navButtons(true, true);
 }
 
@@ -251,9 +244,9 @@ function renderTravel() {
 function renderTiming() {
   D.months = D.months || {};
   D.tripLen = D.tripLen || '';
-  let mgrid = '';
-  for (let i = 0; i < months.length; i++) {
-    let st = D.months[months[i]] || '';
+  var mgrid = '';
+  for (var i = 0; i < months.length; i++) {
+    var st = D.months[months[i]] || '';
     mgrid += '<div class="mbtn ' + st + '" data-m="' + months[i] + '">' + months[i].slice(0, 3) + '</div>';
   }
   return '<div class="card">' +
@@ -331,40 +324,20 @@ function renderWild() {
 
 // ── Step 8: Summary ──
 function renderSummary() {
-  let txt = buildSummary();
   return '<div class="card">' +
     '<h2>&#127881; Here\'s Your Profile, ' + esc(D.name || 'Adventurer') + '!</h2>' +
     '<p class="subtitle">Review below, then copy to clipboard and paste it into the <strong>Family Trip</strong> chat! 💬</p>' +
-    '<div class="summary-box" id="summaryBox">' + esc(txt) + '</div>' +
+    '<div class="summary-box" id="summaryBox">' + esc(buildSummary()) + '</div>' +
     '<button class="btn btn-copy" onclick="copyResults()">&#128203; Copy to Clipboard</button>' +
     '<button class="btn btn-reset" onclick="clearAll()">&#128465; Clear &amp; Start Over</button>' +
     '</div>';
 }
 
-// ── Helpers ──
-function esc(s) { let d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
-
-function makeOpts(arr, group, current) {
-  let h = '';
-  for (let i = 0; i < arr.length; i++) {
-    h += '<div class="opt ' + (current === arr[i] ? 'active' : '') + '" data-g="' + group + '" data-v="' + esc(arr[i]) + '">' + arr[i] + '</div>';
-  }
-  return h;
-}
-
-function makeChecks(arr, type, selected) {
-  let h = '';
-  for (let i = 0; i < arr.length; i++) {
-    h += '<div class="chk ' + (selected.indexOf(arr[i]) >= 0 ? 'active' : '') + '" data-t="' + type + '" data-v="' + esc(arr[i]) + '">' + arr[i] + '</div>';
-  }
-  return h;
-}
-
+// ── Summary Builder (clean for WhatsApp) ──
 function buildSummary() {
-  var nm = (D.name || 'Adventurer').trim();
-  var s = '✈️ TRIP PREFERENCES - ' + nm + '\n\n';
+  var s = '✈️ TRIP PREFERENCES - ' + (D.name || 'Adventurer').trim() + '\n\n';
 
-  s += '🌍 TOP REGIONS:\n';
+  s += '🌍 DESTINATIONS:\n';
   var ranked = regions.filter(function(r) { return (D.regions || {})[r.id] > 0; });
   ranked.sort(function(a, b) { return (D.regions[b.id] || 0) - (D.regions[a.id] || 0); });
   if (ranked.length) {
@@ -395,8 +368,6 @@ function buildSummary() {
 
   s += '\n✈️ TRAVEL:\n';
   if (D.flight) s += 'Max flight: ' + D.flight + '\n';
-  if (D.travelDays) s += 'Travel days: ' + D.travelDays + '\n';
-  if (D.connects) s += 'Connections: ' + D.connects + '\n';
 
   s += '\n📅 TIMING:\n';
   var great = [], works = [], cant = [];
@@ -438,12 +409,12 @@ function vibeLabel(val, low, high) {
 
 // ── Event Binding ──
 function bindEvents() {
-  var ni = document.getElementById('nameIn');
+  var ni = $('nameIn');
   if (ni) ni.addEventListener('input', function(e) { D.name = e.target.value; save(); });
 
-  var hearts = document.querySelectorAll('.heart');
-  for (var i = 0; i < hearts.length; i++) {
-    hearts[i].addEventListener('click', function() {
+  var els = document.querySelectorAll('.heart');
+  for (var i = 0; i < els.length; i++) {
+    els[i].addEventListener('click', function() {
       var r = this.getAttribute('data-r');
       var v = parseInt(this.getAttribute('data-v'));
       if (!D.regions) D.regions = {};
@@ -452,26 +423,26 @@ function bindEvents() {
     });
   }
 
-  var ibtns = document.querySelectorAll('.ibtn');
-  for (var i = 0; i < ibtns.length; i++) {
-    ibtns[i].addEventListener('click', function() {
+  els = document.querySelectorAll('.ibtn');
+  for (var i = 0; i < els.length; i++) {
+    els[i].addEventListener('click', function() {
       if (!D.activities) D.activities = {};
       D.activities[this.getAttribute('data-a')] = this.getAttribute('data-v');
       save(); render();
     });
   }
 
-  var opts = document.querySelectorAll('.opt');
-  for (var i = 0; i < opts.length; i++) {
-    opts[i].addEventListener('click', function() {
+  els = document.querySelectorAll('.opt');
+  for (var i = 0; i < els.length; i++) {
+    els[i].addEventListener('click', function() {
       D[this.getAttribute('data-g')] = this.getAttribute('data-v');
       save(); render();
     });
   }
 
-  var mbtns = document.querySelectorAll('.mbtn');
-  for (var i = 0; i < mbtns.length; i++) {
-    mbtns[i].addEventListener('click', function() {
+  els = document.querySelectorAll('.mbtn');
+  for (var i = 0; i < els.length; i++) {
+    els[i].addEventListener('click', function() {
       if (!D.months) D.months = {};
       var cycle = ['', 'great', 'works', 'cant'];
       var m = this.getAttribute('data-m');
@@ -481,9 +452,9 @@ function bindEvents() {
     });
   }
 
-  var chks = document.querySelectorAll('.chk');
-  for (var i = 0; i < chks.length; i++) {
-    chks[i].addEventListener('click', function() {
+  els = document.querySelectorAll('.chk');
+  for (var i = 0; i < els.length; i++) {
+    els[i].addEventListener('click', function() {
       var t = this.getAttribute('data-t');
       var v = this.getAttribute('data-v');
       var arr = t === 'hf' ? 'homeFeatures' : 'cuisines';
@@ -497,7 +468,7 @@ function bindEvents() {
 
   var sliders = ['vibe1', 'vibe2', 'vibe3'];
   for (var i = 0; i < sliders.length; i++) {
-    var el = document.getElementById(sliders[i]);
+    var el = $(sliders[i]);
     if (el) {
       (function(id) {
         el.addEventListener('input', function(e) { D[id] = parseInt(e.target.value); save(); });
@@ -505,23 +476,21 @@ function bindEvents() {
     }
   }
 
-  var textareas = ['regionOther', 'actOther', 'dream', 'dealbreaker', 'notes', 'dietary'];
-  for (var i = 0; i < textareas.length; i++) {
-    var el = document.getElementById(textareas[i]);
+  for (var i = 0; i < textFields.length; i++) {
+    var el = $(textFields[i]);
     if (el) {
       (function(id) {
         el.addEventListener('input', function(e) { D[id] = e.target.value; save(); });
-      })(textareas[i]);
+      })(textFields[i]);
     }
   }
 }
 
 // ── Navigation ──
 function go(s) {
-  var textareas = ['regionOther', 'actOther', 'dream', 'dealbreaker', 'notes', 'dietary'];
-  for (var i = 0; i < textareas.length; i++) {
-    var el = document.getElementById(textareas[i]);
-    if (el) D[textareas[i]] = el.value;
+  for (var i = 0; i < textFields.length; i++) {
+    var el = $(textFields[i]);
+    if (el) D[textFields[i]] = el.value;
   }
   save();
   step = Math.max(1, Math.min(STEPS, s));
@@ -531,8 +500,7 @@ function go(s) {
 
 // ── Copy ──
 function copyResults() {
-  var txt = buildSummary();
-  navigator.clipboard.writeText(txt).then(function() {
+  navigator.clipboard.writeText(buildSummary()).then(function() {
     var t = $('toast');
     t.textContent = '✅ Copied! Now paste into the Family Trip chat';
     t.classList.add('show');
@@ -572,7 +540,7 @@ function launchConfetti() {
     });
   }
   var frames = 0;
-  function draw() {
+  (function draw() {
     ctx.clearRect(0, 0, c.width, c.height);
     for (var i = 0; i < pieces.length; i++) {
       var p = pieces[i];
@@ -584,11 +552,9 @@ function launchConfetti() {
       ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
       ctx.restore();
     }
-    frames++;
-    if (frames < 200) requestAnimationFrame(draw);
+    if (++frames < 200) requestAnimationFrame(draw);
     else { ctx.clearRect(0, 0, c.width, c.height); c.style.display = 'none'; }
-  }
-  draw();
+  })();
 }
 
 // ── Start ──
