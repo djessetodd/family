@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mom and Dad's Excellent Adventure</title>
+<title>Mom &amp; Dad's Excellent Adventure ✈️</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -11,8 +11,8 @@
 body{font-family:'Inter',sans-serif;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#1a1a2e 100%);color:#f0e6d3;min-height:100vh;padding-bottom:120px}
 h1,h2,h3{font-family:'Playfair Display',serif}
 .header{text-align:center;padding:32px 20px 14px;background:linear-gradient(180deg,rgba(197,165,90,0.18),transparent)}
-.header h1{font-size:2.1em;color:var(--gold);margin-bottom:6px;letter-spacing:0.5px}
-.header p{color:var(--warm);opacity:0.75;font-size:0.92em;max-width:380px;margin:0 auto;line-height:1.5}
+.header h1{font-size:1.9em;color:var(--gold);margin-bottom:6px;letter-spacing:0.5px}
+.header p{color:var(--warm);opacity:0.75;font-size:0.92em;max-width:400px;margin:0 auto;line-height:1.5}
 .progress-bar{position:sticky;top:0;z-index:100;background:rgba(26,26,46,0.95);backdrop-filter:blur(10px);padding:10px 20px 8px;border-bottom:1px solid rgba(197,165,90,0.15)}
 .progress-track{background:rgba(255,255,255,0.08);border-radius:20px;height:7px;overflow:hidden}
 .progress-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--accent));border-radius:20px;transition:width 0.5s ease;width:0%}
@@ -25,9 +25,10 @@ h1,h2,h3{font-family:'Playfair Display',serif}
 .name-input,.text-input{width:100%;padding:14px 16px;border-radius:12px;border:2px solid rgba(197,165,90,0.25);background:rgba(255,255,255,0.04);color:#fff;font-size:1em;font-family:'Inter',sans-serif;outline:none;transition:border-color 0.3s}
 .name-input:focus,.text-input:focus{border-color:var(--gold)}
 textarea.text-input{resize:vertical;min-height:70px;font-size:0.9em}
-.rating-item{display:flex;align-items:center;justify-content:space-between;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.04);gap:8px}
+.rating-item{display:flex;align-items:center;justify-content:space-between;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
 .rating-item:last-child{border-bottom:none}
 .rating-label{font-size:0.88em;flex:1;padding-right:8px;line-height:1.3}
+.rating-label small{display:block;font-size:0.8em;opacity:0.5;margin-top:2px}
 .hearts{display:flex;gap:3px}
 .heart{width:30px;height:30px;border-radius:50%;border:2px solid rgba(197,165,90,0.25);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:13px;transition:all 0.2s;user-select:none}
 .heart.active{background:var(--gold);border-color:var(--gold);transform:scale(1.1)}
@@ -44,10 +45,10 @@ textarea.text-input{resize:vertical;min-height:70px;font-size:0.9em}
 .opt.active{background:var(--gold);color:var(--dark);border-color:var(--gold);font-weight:600}
 .opt:hover{border-color:var(--gold)}
 .month-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:10px}
-.mbtn{padding:10px 6px;border-radius:10px;border:1.5px solid rgba(197,165,90,0.18);background:rgba(255,255,255,0.03);color:var(--warm);cursor:pointer;font-size:0.82em;text-align:center;transition:all 0.2s;font-family:'Inter',sans-serif;user-select:none;font-weight:500}
+.mbtn{padding:10px 6px;border-radius:10px;border:1.5px solid rgba(197,165,90,0.18);background:rgba(255,255,255,0.03);color:var(--warm);cursor:pointer;font-size:0.82em;text-align:center;transition:all 0.2s;font-family:'Inter',sans-serif;user-select:none}
 .mbtn.great{background:var(--green);color:#1a1a2e;border-color:var(--green);font-weight:700}
-.mbtn.works{background:rgba(197,165,90,0.45);color:#fff;border-color:var(--gold);font-weight:600}
-.mbtn.cant{background:var(--red);color:#fff;border-color:var(--red);opacity:0.9;font-weight:600}
+.mbtn.works{background:rgba(197,165,90,0.45);color:#fff;border-color:var(--gold);font-weight:500}
+.mbtn.cant{background:var(--red);color:#fff;border-color:var(--red);opacity:0.85;font-weight:500}
 .legend{display:flex;gap:14px;margin-top:10px;font-size:0.72em;color:var(--warm);opacity:0.6;flex-wrap:wrap}
 .legend span{display:flex;align-items:center;gap:4px}
 .legend .dot{width:10px;height:10px;border-radius:50%;display:inline-block}
@@ -67,28 +68,23 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;heigh
 .btn-next{background:var(--gold);color:var(--dark);flex:1}
 .btn-prev{background:rgba(255,255,255,0.1);color:var(--warm);flex:0.4}
 .btn-submit{background:linear-gradient(135deg,var(--gold),#d4af37);color:var(--dark);flex:1;font-size:1.05em;padding:15px}
-.btn-copy{background:var(--gold);color:var(--dark);width:100%;padding:15px;margin-top:10px}
+.btn-copy{background:var(--gold);color:var(--dark);width:100%;padding:15px;margin-top:10px;font-size:1em}
 .btn-download{background:rgba(255,255,255,0.1);color:var(--warm);width:100%;padding:14px;margin-top:8px}
+.btn-reset{background:rgba(255,255,255,0.08);color:var(--warm);width:100%;padding:12px;margin-top:8px;font-size:0.85em;opacity:0.7}
 .summary-box{background:rgba(0,0,0,0.35);border-radius:14px;padding:16px;font-size:0.78em;line-height:1.7;white-space:pre-wrap;max-height:420px;overflow-y:auto;margin-top:14px;border:1px solid rgba(197,165,90,0.12);font-family:'Inter',monospace}
 .copied-toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--green);color:#1a1a2e;padding:12px 28px;border-radius:14px;font-weight:700;font-size:0.95em;transition:transform 0.4s ease;z-index:9999;box-shadow:0 8px 30px rgba(0,0,0,0.4)}
 .copied-toast.show{transform:translateX(-50%) translateY(0)}
-.inspiration{background:rgba(197,165,90,0.06);border:1px solid rgba(197,165,90,0.12);border-radius:12px;padding:14px;margin-top:14px}
-.inspiration h3{color:var(--accent);font-size:0.9em;margin-bottom:6px}
+.inspiration{background:rgba(197,165,90,0.06);border:1px solid rgba(197,165,90,0.12);border-radius:12px;padding:14px;margin-top:14px;margin-bottom:18px}
+.inspiration h3{color:var(--accent);font-size:0.9em;margin-bottom:6px;font-family:'Playfair Display',serif}
 .inspiration p{font-size:0.78em;opacity:0.6;line-height:1.5}
-canvas#confetti{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999}
-.other-input-row{display:flex;gap:8px;margin-top:10px;align-items:flex-end}
-.other-input-row input{flex:1}
-.other-input-row button{flex:0;padding:10px 15px;background:var(--gold);color:var(--dark);border:none;border-radius:8px;cursor:pointer;font-weight:600;transition:all 0.2s}
-.other-input-row button:hover{background:var(--accent)}
-.other-item{background:rgba(197,165,90,0.08);border:1px solid rgba(197,165,90,0.2);border-radius:8px;padding:10px;margin-top:8px;display:flex;justify-content:space-between;align-items:center;font-size:0.85em}
-.other-item button{background:var(--red);color:#fff;padding:4px 8px;border:none;border-radius:4px;cursor:pointer;font-size:0.75em}
-@media(max-width:380px){.ibtn{padding:4px 5px;font-size:0.62em}.heart{width:26px;height:26px;font-size:11px}.card{padding:18px 14px}}
+canvas#confetti{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;display:none}
+@media(max-width:380px){.ibtn{padding:4px 5px;font-size:0.62em}.heart{width:26px;height:26px;font-size:11px}.card{padding:18px 14px}.header h1{font-size:1.5em}}
 </style>
 </head>
 <body>
 
 <div class="header">
-<h1>✈️ Mom and Dad's Excellent Adventure</h1>
+<h1>✈️ Mom &amp; Dad's Excellent Adventure</h1>
 <p>Help us figure out where, when, and how — takes about 3 minutes!</p>
 </div>
 
@@ -102,230 +98,519 @@ canvas#confetti{position:fixed;top:0;left:0;width:100%;height:100%;pointer-event
 <canvas id="confetti"></canvas>
 
 <script>
-const STEPS=8;
-let step=1, D=JSON.parse(localStorage.getItem('momdadAdventure')||'{}');
-function save(){localStorage.setItem('momdadAdventure',JSON.stringify(D))}
+const STEPS = 8;
+let step = 1;
+let D = JSON.parse(localStorage.getItem('momdadAdventure') || '{}');
+function save() { localStorage.setItem('momdadAdventure', JSON.stringify(D)); }
 
-const regions=[
-{id:'spain_portugal',n:'🇪🇸 Spain & Portugal'},
-{id:'austria_germany',n:'🇦🇹 Austria or Germany'},
-{id:'northern_italy',n:'🇮🇹 Northern Italy'},
-{id:'southern_france',n:'🇫🇷 Southern France'},
-{id:'crete',n:'🇬🇷 Crete'},
-{id:'costa_rica',n:'🇨🇷 Costa Rica'},
-{id:'la_paz_mexico',n:'🇲🇽 La Paz, Mexico'}
+const regions = [
+  { id: 'west_europe', n: '🇪🇺 Western Europe', s: 'France, Spain, Italy, Portugal' },
+  { id: 'mediterranean', n: '🇬🇷 Mediterranean', s: 'Greece, Crete, Croatia, Turkey' },
+  { id: 'uk_ireland', n: '🇬🇧 UK & Ireland', s: '' },
+  { id: 'scandinavia', n: '🇳🇴 Scandinavia & Iceland', s: '' },
+  { id: 'central_europe', n: '🇨🇿 Central/Eastern Europe', s: 'Czech Republic, Hungary, Poland' },
+  { id: 'mexico', n: '🇲🇽 Mexico', s: 'Baja, Oaxaca, Riviera' },
+  { id: 'central_america', n: '🇨🇷 Central America & Caribbean', s: 'Costa Rica, Belize, islands' },
+  { id: 'south_america', n: '🇧🇷 South America', s: 'Argentina, Colombia, Peru' },
+  { id: 'pacific', n: '🏝️ Pacific Islands', s: 'Fiji, Tahiti, Cook Islands' },
+  { id: 'se_asia', n: '🇹🇭 Southeast Asia', s: 'Thailand, Vietnam, Bali' },
+  { id: 'japan_korea', n: '🇯🇵 Japan & South Korea', s: '' },
+  { id: 'australia_nz', n: '🇦🇺 Australia & New Zealand', s: '' },
+  { id: 'canada', n: '🇨🇦 Canada', s: 'BC, Maritimes, Rockies' },
+  { id: 'us_destinations', n: '🇺🇸 US Destinations', s: 'Alaska, National Parks' },
+  { id: 'africa', n: '🌍 Africa', s: 'Morocco, South Africa, safari' }
 ];
 
-const activities=[
-{id:'diving',n:'🤿 Scuba / snorkeling'},
-{id:'hiking',n:'🥾 Hiking / nature walks'},
-{id:'cooking',n:'👨‍🍳 Cooking classes / food tours'},
-{id:'wine',n:'🍷 Wine / beer / spirits tasting'},
-{id:'beach',n:'🏖️ Beach / relaxation'},
-{id:'museums',n:'🏛️ Museums & galleries'},
-{id:'architecture',n:'🏰 Architecture & historic sites'},
-{id:'spa',n:'💆 Spa & wellness'},
-{id:'photo',n:'📸 Photography excursions'},
-{id:'fishing',n:'🎣 Fishing'},
-{id:'crafts',n:'🎨 Crafts (pottery, painting, woodworking)'},
-{id:'music',n:'🎵 Music (live music, playing instruments)'}
+const activities = [
+  { id: 'diving', n: '🤿 Scuba / snorkeling' },
+  { id: 'cycling', n: '🚴 Road cycling / biking' },
+  { id: 'extreme', n: '⛰️ Extreme sports (paragliding, climbing)' },
+  { id: 'golf', n: '⛳ Golf' },
+  { id: 'skiing', n: '⛷️ Skiing / snowboarding' },
+  { id: 'water', n: '🛶 Kayaking / paddleboarding' },
+  { id: 'hiking', n: '🥾 Hiking / nature walks' },
+  { id: 'cooking', n: '👨‍🍳 Cooking classes / food tours' },
+  { id: 'wine', n: '🍷 Wine / beer / spirits tasting' },
+  { id: 'shopping', n: '🛍️ Shopping & local markets' },
+  { id: 'museums', n: '🏛️ Museums & galleries' },
+  { id: 'architecture', n: '🏰 Architecture & historic sites' },
+  { id: 'music', n: '🎵 Live music & performing arts' },
+  { id: 'art', n: '🎨 Pottery / painting / art workshops' },
+  { id: 'beach', n: '🏖️ Beach / relaxation' },
+  { id: 'spa', n: '💆 Spa & wellness' },
+  { id: 'photo', n: '📸 Photography excursions' },
+  { id: 'fishing', n: '🎣 Fishing' }
 ];
 
-const lvls=['Skip','Meh','Into it','MUST DO'];
-const flightOpts=['4 hrs','6 hrs','8 hrs','10 hrs','12 hrs','15+ hrs','Anywhere worth it!'];
-const dayOpts=['1 day','2 days','Whatever'];
-const connectOpts=['Nonstop','Connections ok','Don\'t care'];
-const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
-const tripLen=['5 days','7 days','10 days','14 days','Flexible'];
-const homeFeatures=['🏊 Pool','🌊 Ocean view','⛰️ Mountain','🚶 Walking to town','🍳 Kitchen','🌿 Outdoor dining','🎮 Game room','♨️ Hot tub','🌺 Garden','🅿️ Parking','📶 WiFi','🛏️ Ensuite'];
-const cuisines=['🇮🇹 Italian','🇫🇷 French','🫒 Mediterranean','🇲🇽 Mexican','🥢 Asian','🦐 Seafood','🔥 BBQ','🌿 Farm-to-table','🌮 Street food','🥂 Fine dining','🍣 Sushi','🥘 Indian'];
+const lvls = ['Skip', 'Meh', 'Into it', 'MUST DO'];
+const flightOpts = ['4 hrs', '6 hrs', '8 hrs', '10 hrs', '12 hrs', '15+ hrs', 'Anywhere worth it! ✈️'];
+const dayOpts = ['1 day each way', '2 days each way', 'Whatever it takes'];
+const connectOpts = ['Nonstop preferred', 'Connections fine', "Don't care"];
+const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const tripLen = ['5 days', '7 days', '10 days', '14 days', 'Flexible'];
+const homeFeatures = ['🏊 Pool','🌊 Ocean/water view','⛰️ Mountain view','🚶 Walking to town','🍳 Large kitchen','🌿 Outdoor dining','🎮 Game room','♨️ Hot tub','🌺 Garden/yard','📶 Good WiFi','🛏️ Ensuite bedrooms'];
+const cuisines = ['🇮🇹 Italian','🇫🇷 French','🫒 Mediterranean','🇲🇽 Mexican/Latin','🥢 Asian','🦐 Seafood','🔥 BBQ / Grill','🌿 Farm-to-table','🌮 Street food','🥂 Fine dining','🍣 Sushi / Japanese','🥘 Indian / Middle Eastern'];
 
-const $=id=>document.getElementById(id);
-const app=$('app');
+const $ = id => document.getElementById(id);
+const app = $('app');
 
-function render(){
-  $('progressFill').style.width=((step/STEPS)*100)+'%';
-  $('progressLabel').textContent=step===STEPS?'All done! 🎉':`Step ${step} of ${STEPS}`;
-  let h='';
-  if(step===1) h=renderName();
-  else if(step===2) h=renderRegions();
-  else if(step===3) h=renderActivities();
-  else if(step===4) h=renderTravel();
-  else if(step===5) h=renderTiming();
-  else if(step===6) h=renderAccom();
-  else if(step===7) h=renderWild();
-  else if(step===8) h=renderSummary();
-  app.innerHTML=h;
+function render() {
+  $('progressFill').style.width = ((step / STEPS) * 100) + '%';
+  $('progressLabel').textContent = step === STEPS ? 'All done! 🎉' : 'Step ' + step + ' of ' + STEPS;
+  let h = '';
+  if (step === 1) h = renderName();
+  else if (step === 2) h = renderRegions();
+  else if (step === 3) h = renderActivities();
+  else if (step === 4) h = renderTravel();
+  else if (step === 5) h = renderTiming();
+  else if (step === 6) h = renderAccom();
+  else if (step === 7) h = renderWild();
+  else if (step === 8) h = renderSummary();
+  app.innerHTML = h;
   bindEvents();
-  window.scrollTo({top:0,behavior:'smooth'});
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-function nav(prev,next){
-  let n='';
-  if(prev) n+=`<button class="btn btn-prev" onclick="go(${step-1})">← Back</button>`;
-  if(next&&step<STEPS) n+=`<button class="btn btn-next" onclick="go(${step+1})">Next →</button>`;
-  if(step===STEPS-1) n+=`<button class="btn btn-submit" onclick="go(${step+1})">🎉 Submit</button>`;
-  return `<div class="nav">${n}</div>`;
+function navButtons(prev, next) {
+  let n = '';
+  if (prev) n += '<button class="btn btn-prev" onclick="go(' + (step - 1) + ')">&#8592; Back</button>';
+  if (next && step < STEPS - 1) n += '<button class="btn btn-next" onclick="go(' + (step + 1) + ')">Next &#8594;</button>';
+  if (step === STEPS - 1) n += '<button class="btn btn-submit" onclick="go(' + (step + 1) + ')">&#127881; See My Results</button>';
+  return '<div class="nav">' + n + '</div>';
 }
 
-function renderName(){
-  D.name=D.name||'';
-  return `<div class="card"><h2>👋 Who are you?</h2><input class="name-input" type="text" placeholder="Your name" value="${D.name}" id="nameIn"></div>${nav(false,true)}`;
+// ── Step 1: Name ──
+function renderName() {
+  D.name = D.name || '';
+  return '<div class="card">' +
+    '<h2>&#128075; First, who\'s this?</h2>' +
+    '<p class="subtitle">So we know whose answers these are!</p>' +
+    '<input class="name-input" type="text" placeholder="Your name (e.g. Jesse)" value="' + esc(D.name) + '" id="nameIn">' +
+    '</div>' + navButtons(false, true);
 }
 
-function renderRegions(){
-  D.regions=D.regions||{};
-  D.otherDests=D.otherDests||[];
-  let items=regions.map(r=>{
-    let v=D.regions[r.id]||0;
-    let hearts='';
-    for(let i=1;i<=5;i++) hearts+=`<div class="heart ${i<=v?'active':''} " data-r="${r.id}" data-v="${i}">${i<=v?'❤️':'🤍'}</div>`;
-    return `<div class="rating-item"><div class="rating-label">${r.n}</div><div class="hearts">${hearts}</div></div>`;
-  }).join('');
-  let otherList=D.otherDests.map((d,i)=>`<div class="other-item">${d}<button onclick="removeOther(${i})">Remove</button></div>`).join('');
-  return `<div class="card"><h2>🌍 Destinations</h2><p class="subtitle">Rate each: 1 = meh → 5 = DREAM</p>${items}<div class="field-label">Other destinations?</div><div class="other-input-row"><input type="text" id="otherDestInput" placeholder="e.g., Switzerland, Iceland..."><button onclick="addOther()">Add</button></div>${otherList}</div>${nav(true,true)}`;
+// ── Step 2: Regions ──
+function renderRegions() {
+  D.regions = D.regions || {};
+  let items = '';
+  for (let i = 0; i < regions.length; i++) {
+    let r = regions[i];
+    let v = D.regions[r.id] || 0;
+    let hearts = '';
+    for (let j = 1; j <= 5; j++) {
+      hearts += '<div class="heart ' + (j <= v ? 'active' : '') + '" data-r="' + r.id + '" data-v="' + j + '">' + (j <= v ? '❤️' : '🤍') + '</div>';
+    }
+    items += '<div class="rating-item"><div class="rating-label">' + r.n + (r.s ? '<small>' + r.s + '</small>' : '') + '</div><div class="hearts">' + hearts + '</div></div>';
+  }
+  return '<div class="card">' +
+    '<h2>&#127757; Where in the World?</h2>' +
+    '<p class="subtitle">Rate each region: 1 heart = "meh" &#8594; 5 hearts = "DREAM destination!" Leave blank if no opinion.</p>' +
+    items +
+    '</div>' +
+    '<div class="card">' +
+    '<h2>&#128173; Anywhere else?</h2>' +
+    '<p class="subtitle">Any specific place calling your name that\'s not listed?</p>' +
+    '<textarea class="text-input" id="regionOther" placeholder="e.g. \'I\'ve always wanted to see Patagonia\' or \'What about the Amalfi Coast?\'">' + esc(D.regionOther || '') + '</textarea>' +
+    '</div>' + navButtons(true, true);
 }
 
-function renderActivities(){
-  D.activities=D.activities||{};
-  let items=activities.map(a=>{
-    let v=D.activities[a.id]||'';
-    let btns=lvls.map(l=>`<div class="ibtn ${v===l?'active':''} " data-a="${a.id}" data-v="${l}">${l}</div>`).join('');
-    return `<div class="interest-item"><div class="interest-label">${a.n}</div><div class="interest-btns">${btns}</div></div>`;
-  }).join('');
-  return `<div class="card"><h2>🎯 Activities</h2>${items}</div>${nav(true,true)}`;
+// ── Step 3: Activities ──
+function renderActivities() {
+  D.activities = D.activities || {};
+  let items = '';
+  for (let i = 0; i < activities.length; i++) {
+    let a = activities[i];
+    let v = D.activities[a.id] || '';
+    let btns = '';
+    for (let j = 0; j < lvls.length; j++) {
+      btns += '<div class="ibtn ' + (v === lvls[j] ? 'active' : '') + '" data-a="' + a.id + '" data-v="' + lvls[j] + '">' + lvls[j] + '</div>';
+    }
+    items += '<div class="interest-item"><div class="interest-label">' + a.n + '</div><div class="interest-btns">' + btns + '</div></div>';
+  }
+  return '<div class="card">' +
+    '<h2>&#127919; What Lights You Up?</h2>' +
+    '<p class="subtitle">How interested are you in each? Be honest!</p>' +
+    items +
+    '</div>' +
+    '<div class="card">' +
+    '<h2>&#11088; Anything else?</h2>' +
+    '<p class="subtitle">Activities not listed that you\'d love on this trip?</p>' +
+    '<textarea class="text-input" id="actOther" placeholder="e.g. \'horseback riding on a beach\' or \'a family talent show night\'">' + esc(D.actOther || '') + '</textarea>' +
+    '</div>' + navButtons(true, true);
 }
 
-function renderTravel(){
-  D.flight=D.flight||'';
-  let fbtns=flightOpts.map(f=>`<div class="opt ${D.flight===f?'active':''} " data-g="flight" data-v="${f}">${f}</div>`).join('');
-  return `<div class="card"><h2>✈️ Travel</h2><div class="field-label">Max flight:</div><div class="option-grid">${fbtns}</div></div>${nav(true,true)}`;
+// ── Step 4: Travel ──
+function renderTravel() {
+  D.flight = D.flight || '';
+  D.travelDays = D.travelDays || '';
+  D.connects = D.connects || '';
+  return '<div class="card">' +
+    '<h2>&#9992;&#65039; Travel Reality</h2>' +
+    '<p class="subtitle">How far are you willing to go?</p>' +
+    '<div class="field-label">Max flight time you\'re comfortable with:</div>' +
+    '<div class="option-grid">' + makeOpts(flightOpts, 'flight', D.flight) + '</div>' +
+    '<div class="field-label">How many travel days each way?</div>' +
+    '<div class="option-grid">' + makeOpts(dayOpts, 'travelDays', D.travelDays) + '</div>' +
+    '<div class="field-label">Connecting flights?</div>' +
+    '<div class="option-grid">' + makeOpts(connectOpts, 'connects', D.connects) + '</div>' +
+    '</div>' + navButtons(true, true);
 }
 
-function renderTiming(){
-  D.months=D.months||{};
-  let mgrid=months.map(m=>{
-    let st=D.months[m]||'';
-    return `<div class="mbtn ${st} " data-m="${m}">${m.slice(0,3)}</div>`;
-  }).join('');
-  return `<div class="card"><h2>📅 Best Months</h2><p class="subtitle">Tap to cycle: Great ✅ → Works 👍 → Avoid ❌ → reset</p><div class="month-grid">${mgrid}</div><div class="legend"><span><span class="dot" style="background:var(--green)"></span>Great</span><span><span class="dot" style="background:rgba(197,165,90,0.45)"></span>Works</span><span><span class="dot" style="background:var(--red)"></span>Avoid</span></div></div>${nav(true,true)}`;
+// ── Step 5: Timing ──
+function renderTiming() {
+  D.months = D.months || {};
+  D.tripLen = D.tripLen || '';
+  let mgrid = '';
+  for (let i = 0; i < months.length; i++) {
+    let st = D.months[months[i]] || '';
+    mgrid += '<div class="mbtn ' + st + '" data-m="' + months[i] + '">' + months[i].slice(0, 3) + '</div>';
+  }
+  return '<div class="card">' +
+    '<h2>&#128197; When Works for You?</h2>' +
+    '<p class="subtitle">Tap each month to cycle: Great &#8594; Works &#8594; Can\'t &#8594; reset</p>' +
+    '<div class="month-grid">' + mgrid + '</div>' +
+    '<div class="legend">' +
+    '<span><span class="dot" style="background:var(--green)"></span> Great!</span>' +
+    '<span><span class="dot" style="background:rgba(197,165,90,0.5)"></span> Works</span>' +
+    '<span><span class="dot" style="background:var(--red)"></span> Can\'t</span>' +
+    '</div>' +
+    '<div class="field-label" style="margin-top:20px">Ideal trip length?</div>' +
+    '<div class="option-grid">' + makeOpts(tripLen, 'tripLen', D.tripLen) + '</div>' +
+    '</div>' + navButtons(true, true);
 }
 
-function renderAccom(){
-  D.vibe1=D.vibe1??50;
-  D.vibe2=D.vibe2??50;
-  D.vibe3=D.vibe3??50;
-  return `<div class="card"><h2>🎚️ Trip Vibe</h2><p class="subtitle">Slide toward what appeals to you</p><div class="slider-row"><label>Energy Level</label><input type="range" min="0" max="100" value="${D.vibe1}" id="vibe1"><div class="slider-ends"><span>🧘 Relax</span><span>🧗 Adventure</span></div></div><div class="slider-row"><label>Experience</label><input type="range" min="0" max="100" value="${D.vibe2}" id="vibe2"><div class="slider-ends"><span>🏛️ Culture</span><span>🏖️ Luxury</span></div></div><div class="slider-row"><label>Planning</label><input type="range" min="0" max="100" value="${D.vibe3}" id="vibe3"><div class="slider-ends"><span>📋 Planned</span><span>🌊 Spontaneous</span></div></div></div>${nav(true,true)}`;
+// ── Step 6: Accommodation & Vibe & Food ──
+function renderAccom() {
+  D.homeFeatures = D.homeFeatures || [];
+  D.vibe1 = D.vibe1 != null ? D.vibe1 : 50;
+  D.vibe2 = D.vibe2 != null ? D.vibe2 : 50;
+  D.vibe3 = D.vibe3 != null ? D.vibe3 : 50;
+  D.cuisines = D.cuisines || [];
+  D.dietary = D.dietary || '';
+
+  return '<div class="card">' +
+    '<h2>&#127969; The Home Base</h2>' +
+    '<p class="subtitle">What matters most in the villa? Pick all that appeal.</p>' +
+    '<div class="check-grid">' + makeChecks(homeFeatures, 'hf', D.homeFeatures) + '</div>' +
+    '</div>' +
+
+    '<div class="card">' +
+    '<h2>&#127902;&#65039; Trip Vibe</h2>' +
+    '<p class="subtitle">Slide toward what you prefer — no wrong answers!</p>' +
+    '<div class="slider-row"><label>Energy Level</label>' +
+    '<input type="range" min="0" max="100" value="' + D.vibe1 + '" id="vibe1">' +
+    '<div class="slider-ends"><span>&#129495; Full relaxation</span><span>&#129495;&#8205;&#9794;&#65039; Max adventure</span></div></div>' +
+    '<div class="slider-row"><label>Experience Style</label>' +
+    '<input type="range" min="0" max="100" value="' + D.vibe2 + '" id="vibe2">' +
+    '<div class="slider-ends"><span>&#127963;&#65039; Deep culture</span><span>&#127958;&#65039; Resort luxury</span></div></div>' +
+    '<div class="slider-row"><label>Planning Style</label>' +
+    '<input type="range" min="0" max="100" value="' + D.vibe3 + '" id="vibe3">' +
+    '<div class="slider-ends"><span>&#128203; Planned itinerary</span><span>&#127754; Go with the flow</span></div></div>' +
+    '</div>' +
+
+    '<div class="card">' +
+    '<h2>&#127869; Food &amp; Dining</h2>' +
+    '<p class="subtitle">Pick cuisines you\'d love to explore.</p>' +
+    '<div class="check-grid">' + makeChecks(cuisines, 'cu', D.cuisines) + '</div>' +
+    '<div class="field-label">Any dietary needs or restrictions?</div>' +
+    '<textarea class="text-input" id="dietary" placeholder="e.g. vegetarian, gluten-free, shellfish allergy...">' + esc(D.dietary) + '</textarea>' +
+    '</div>' + navButtons(true, true);
 }
 
-function renderWild(){
-  D.dream=D.dream||'';
-  return `<div class="card"><h2>💭 Bottom Line</h2><p class="subtitle">What's most important to you for this trip?</p><textarea class="text-input" id="dream" placeholder="e.g., Quality family time, adventure & learning, relaxation by water...">${D.dream}</textarea></div>${nav(true,true)}`;
+// ── Step 7: Wild Card ──
+function renderWild() {
+  D.dream = D.dream || '';
+  D.dealbreaker = D.dealbreaker || '';
+  D.notes = D.notes || '';
+  return '<div class="card">' +
+    '<h2>&#128172; The Fun Stuff</h2>' +
+    '<p class="subtitle">Last step before the big reveal!</p>' +
+    '<div class="field-label">&#10024; In one sentence, what\'s your dream trip experience?</div>' +
+    '<textarea class="text-input" id="dream" placeholder="e.g. \'Diving a shipwreck in the morning, pottery class in the afternoon, family dinner under the stars.\'">' + esc(D.dream) + '</textarea>' +
+    '<div class="field-label">&#128683; Any dealbreakers?</div>' +
+    '<textarea class="text-input" id="dealbreaker" placeholder="e.g. \'No extreme heat\' or \'Needs to be accessible\'">' + esc(D.dealbreaker) + '</textarea>' +
+    '<div class="field-label">&#128221; Anything else on your mind?</div>' +
+    '<textarea class="text-input" id="notes" placeholder="Ideas, concerns, must-haves, or just general vibes...">' + esc(D.notes) + '</textarea>' +
+    '</div>' +
+    '<div class="inspiration">' +
+    '<h3>&#128161; Need inspiration?</h3>' +
+    '<p>Jesse\'s slide deck explored Portugal, Australia, Costa Rica, Crete, and Mexico. But this trip could go anywhere — that\'s what this survey is for!</p>' +
+    '</div>' + navButtons(true, true);
 }
 
-function renderSummary(){
-  let summary=buildSummary();
-  return `<div class="card"><h2>🎉 Your Profile</h2><div class="summary-box">${summary}</div><button class="btn btn-copy" onclick="copySummary()">📋 Copy</button><button class="btn btn-download" onclick="downloadSummary()">💾 Download</button><button class="btn btn-submit" onclick="submitSurvey()">📤 Submit</button></div>`;
+// ── Step 8: Summary ──
+function renderSummary() {
+  let txt = buildSummary();
+  return '<div class="card">' +
+    '<h2>&#127881; Here\'s Your Profile, ' + esc(D.name || 'Adventurer') + '!</h2>' +
+    '<p class="subtitle">Review below, then copy or download to share with the group.</p>' +
+    '<div class="summary-box" id="summaryBox">' + esc(txt) + '</div>' +
+    '<button class="btn btn-copy" onclick="copyResults()">&#128203; Copy to Clipboard</button>' +
+    '<button class="btn btn-download" onclick="downloadResults()">&#128190; Download JSON</button>' +
+    '<button class="btn btn-reset" onclick="clearAll()">&#128465; Clear &amp; Start Over</button>' +
+    '</div>';
 }
 
-function buildSummary(){
-  let s=`✈️ TRIP PREFERENCES\n${D.name||'Guest'}\n${'═'.repeat(40)}\n\n`;
-  let ranked=regions.filter(r=>(D.regions||{})[r.id]>0).sort((a,b)=>(D.regions[b.id]||0)-(D.regions[a.id]||0));
-  if(ranked.length) ranked.forEach(r=>s+=`  ${'❤️'.repeat(D.regions[r.id])} ${r.n}\n`);
-  if((D.otherDests||[]).length) s+=`  💭 Other: ${D.otherDests.join(', ')}\n`;
-  s+=`\n🎯 ACTIVITIES:\n`;
-  let mustDo=[],into=[],meh=[];
-  Object.entries(D.activities||{}).forEach(([k,v])=>{let a=activities.find(x=>x.id===k);if(!a)return;if(v==='MUST DO')mustDo.push(a.n);else if(v==='Into it')into.push(a.n);else if(v==='Meh')meh.push(a.n);});
-  if(mustDo.length) s+=`  🔥 MUST DO: ${mustDo.join(', ')}\n`;
-  if(into.length) s+=`  👍 Into it: ${into.join(', ')}\n`;
-  s+=`\n📅 BEST MONTHS:\n`;
-  let great=[],works=[],cant=[];
-  Object.entries(D.months||{}).forEach(([m,v])=>{if(v==='great')great.push(m.slice(0,3));else if(v==='works')works.push(m.slice(0,3));else if(v==='cant')cant.push(m.slice(0,3));});
-  if(great.length) s+=`  ✅ Great: ${great.join(', ')}\n`;
-  if(works.length) s+=`  👍 Works: ${works.join(', ')}\n`;
-  s+=`\n🎚️ VIBE:\n  Energy: ${D.vibe1<=30?'🧘 Relax':D.vibe1>=70?'🧗 Adventure':'⚖️ Balanced'}\n  Style: ${D.vibe2<=30?'🏛️ Culture':D.vibe2>=70?'🏖️ Luxury':'⚖️ Mix'}\n  Planning: ${D.vibe3<=30?'📋 Structured':D.vibe3>=70?'🌊 Spontaneous':'⚖️ Flexible'}\n`;
-  s+=`\n💭 BOTTOM LINE:\n  ${D.dream||'(not provided)'}\n`;
+// ── Helpers ──
+function esc(s) { let d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
+function makeOpts(arr, group, current) {
+  let h = '';
+  for (let i = 0; i < arr.length; i++) {
+    h += '<div class="opt ' + (current === arr[i] ? 'active' : '') + '" data-g="' + group + '" data-v="' + esc(arr[i]) + '">' + arr[i] + '</div>';
+  }
+  return h;
+}
+
+function makeChecks(arr, type, selected) {
+  let h = '';
+  for (let i = 0; i < arr.length; i++) {
+    h += '<div class="chk ' + (selected.indexOf(arr[i]) >= 0 ? 'active' : '') + '" data-t="' + type + '" data-v="' + esc(arr[i]) + '">' + arr[i] + '</div>';
+  }
+  return h;
+}
+
+function buildSummary() {
+  let s = '✈️ TRIP PREFERENCES — ' + (D.name || '(no name)') + '\n';
+  s += '════════════════════════════════════════\n\n';
+
+  s += '🌍 TOP REGIONS:\n';
+  let ranked = regions.filter(function(r) { return (D.regions || {})[r.id] > 0; });
+  ranked.sort(function(a, b) { return (D.regions[b.id] || 0) - (D.regions[a.id] || 0); });
+  if (ranked.length) {
+    for (let i = 0; i < ranked.length; i++) {
+      let r = ranked[i];
+      let h = '';
+      for (let j = 0; j < D.regions[r.id]; j++) h += '❤️';
+      s += '  ' + h + ' ' + r.n + '\n';
+    }
+  } else { s += '  (none rated)\n'; }
+  if (D.regionOther) s += '  💭 Also mentioned: ' + D.regionOther + '\n';
+
+  s += '\n🎯 ACTIVITIES:\n';
+  let mustDo = [], into = [], meh = [];
+  let act = D.activities || {};
+  for (let k in act) {
+    let a = null;
+    for (let i = 0; i < activities.length; i++) { if (activities[i].id === k) { a = activities[i]; break; } }
+    if (!a) continue;
+    if (act[k] === 'MUST DO') mustDo.push(a.n);
+    else if (act[k] === 'Into it') into.push(a.n);
+    else if (act[k] === 'Meh') meh.push(a.n);
+  }
+  if (mustDo.length) s += '  🔥 MUST DO: ' + mustDo.join(', ') + '\n';
+  if (into.length) s += '  👍 Into it: ' + into.join(', ') + '\n';
+  if (meh.length) s += '  😐 Meh: ' + meh.join(', ') + '\n';
+  if (D.actOther) s += '  ⭐ Also wants: ' + D.actOther + '\n';
+
+  s += '\n✈️ TRAVEL:\n';
+  if (D.flight) s += '  Max flight: ' + D.flight + '\n';
+  if (D.travelDays) s += '  Travel days: ' + D.travelDays + '\n';
+  if (D.connects) s += '  Connections: ' + D.connects + '\n';
+
+  s += '\n📅 TIMING:\n';
+  let great = [], works = [], cant = [];
+  var mo = D.months || {};
+  for (let m in mo) {
+    if (mo[m] === 'great') great.push(m.slice(0, 3));
+    else if (mo[m] === 'works') works.push(m.slice(0, 3));
+    else if (mo[m] === 'cant') cant.push(m.slice(0, 3));
+  }
+  if (great.length) s += '  ✅ Great: ' + great.join(', ') + '\n';
+  if (works.length) s += '  👍 Works: ' + works.join(', ') + '\n';
+  if (cant.length) s += '  ❌ Can\'t: ' + cant.join(', ') + '\n';
+  if (D.tripLen) s += '  📏 Trip length: ' + D.tripLen + '\n';
+
+  s += '\n🎚️ VIBE:\n';
+  s += '  Energy: ' + vibeLabel(D.vibe1, '🧘 Relaxation', '🧗 Adventure') + '\n';
+  s += '  Style: ' + vibeLabel(D.vibe2, '🏛️ Cultural', '🏖️ Resort') + '\n';
+  s += '  Planning: ' + vibeLabel(D.vibe3, '📋 Structured', '🌊 Spontaneous') + '\n';
+
+  if ((D.homeFeatures || []).length) s += '\n🏡 HOME MUST-HAVES:\n  ' + D.homeFeatures.join(', ') + '\n';
+
+  if ((D.cuisines || []).length) s += '\n🍽️ CUISINES:\n  ' + D.cuisines.join(', ') + '\n';
+  if (D.dietary) s += '  ⚠️ Dietary: ' + D.dietary + '\n';
+
+  s += '\n💬 WILD CARD:\n';
+  if (D.dream) s += '  ✨ Dream: ' + D.dream + '\n';
+  if (D.dealbreaker) s += '  🚫 Dealbreaker: ' + D.dealbreaker + '\n';
+  if (D.notes) s += '  📝 Notes: ' + D.notes + '\n';
+
   return s;
 }
 
-function bindEvents(){
-  const ni=document.getElementById('nameIn');
-  if(ni) ni.addEventListener('input',e=>{D.name=e.target.value;save()});
-  document.querySelectorAll('.heart').forEach(h=>h.addEventListener('click',e=>{
-    const r=h.dataset.r, v=parseInt(h.dataset.v);
-    if(!D.regions) D.regions={};
-    D.regions[r]=D.regions[r]===v?v-1:v;
-    save();render();
-  }));
-  document.querySelectorAll('.ibtn').forEach(b=>b.addEventListener('click',()=>{
-    if(!D.activities) D.activities={};
-    D.activities[b.dataset.a]=b.dataset.v;save();render();
-  }));
-  document.querySelectorAll('.opt').forEach(b=>b.addEventListener('click',()=>{
-    D[b.dataset.g]=b.dataset.v;save();render();
-  }));
-  document.querySelectorAll('.mbtn').forEach(b=>b.addEventListener('click',()=>{
-    if(!D.months) D.months={};
-    const cycle=['','great','works','cant'];
-    let cur=cycle.indexOf(D.months[b.dataset.m]||'');
-    D.months[b.dataset.m]=cycle[(cur+1)%4];
-    save();render();
-  }));
-  document.querySelectorAll('[id^="vibe"]').forEach(el=>el.addEventListener('input',e=>{D[el.id]=parseInt(e.target.value);save()}));
-  const dream=document.getElementById('dream');
-  if(dream) dream.addEventListener('input',e=>{D.dream=e.target.value;save()});
+function vibeLabel(val, low, high) {
+  val = val != null ? val : 50;
+  if (val <= 30) return low + ' (' + val + '/100)';
+  if (val >= 70) return high + ' (' + val + '/100)';
+  return '⚖️ Balanced (' + val + '/100)';
 }
 
-function addOther(){
-  const inp=document.getElementById('otherDestInput');
-  if(inp.value.trim()){
-    if(!D.otherDests) D.otherDests=[];
-    D.otherDests.push(inp.value.trim());
-    save();render();
+// ── Event Binding ──
+function bindEvents() {
+  var ni = document.getElementById('nameIn');
+  if (ni) ni.addEventListener('input', function(e) { D.name = e.target.value; save(); });
+
+  var hearts = document.querySelectorAll('.heart');
+  for (var i = 0; i < hearts.length; i++) {
+    hearts[i].addEventListener('click', function() {
+      var r = this.getAttribute('data-r');
+      var v = parseInt(this.getAttribute('data-v'));
+      if (!D.regions) D.regions = {};
+      D.regions[r] = D.regions[r] === v ? v - 1 : v;
+      save(); render();
+    });
+  }
+
+  var ibtns = document.querySelectorAll('.ibtn');
+  for (var i = 0; i < ibtns.length; i++) {
+    ibtns[i].addEventListener('click', function() {
+      if (!D.activities) D.activities = {};
+      D.activities[this.getAttribute('data-a')] = this.getAttribute('data-v');
+      save(); render();
+    });
+  }
+
+  var opts = document.querySelectorAll('.opt');
+  for (var i = 0; i < opts.length; i++) {
+    opts[i].addEventListener('click', function() {
+      D[this.getAttribute('data-g')] = this.getAttribute('data-v');
+      save(); render();
+    });
+  }
+
+  var mbtns = document.querySelectorAll('.mbtn');
+  for (var i = 0; i < mbtns.length; i++) {
+    mbtns[i].addEventListener('click', function() {
+      if (!D.months) D.months = {};
+      var cycle = ['', 'great', 'works', 'cant'];
+      var m = this.getAttribute('data-m');
+      var cur = cycle.indexOf(D.months[m] || '');
+      D.months[m] = cycle[(cur + 1) % 4];
+      save(); render();
+    });
+  }
+
+  var chks = document.querySelectorAll('.chk');
+  for (var i = 0; i < chks.length; i++) {
+    chks[i].addEventListener('click', function() {
+      var t = this.getAttribute('data-t');
+      var v = this.getAttribute('data-v');
+      var arr = t === 'hf' ? 'homeFeatures' : 'cuisines';
+      if (!D[arr]) D[arr] = [];
+      var idx = D[arr].indexOf(v);
+      if (idx >= 0) D[arr].splice(idx, 1);
+      else D[arr].push(v);
+      save(); render();
+    });
+  }
+
+  var sliders = ['vibe1', 'vibe2', 'vibe3'];
+  for (var i = 0; i < sliders.length; i++) {
+    var el = document.getElementById(sliders[i]);
+    if (el) {
+      (function(id) {
+        el.addEventListener('input', function(e) { D[id] = parseInt(e.target.value); save(); });
+      })(sliders[i]);
+    }
+  }
+
+  var textareas = ['regionOther', 'actOther', 'dream', 'dealbreaker', 'notes', 'dietary'];
+  for (var i = 0; i < textareas.length; i++) {
+    var el = document.getElementById(textareas[i]);
+    if (el) {
+      (function(id) {
+        el.addEventListener('input', function(e) { D[id] = e.target.value; save(); });
+      })(textareas[i]);
+    }
   }
 }
 
-function removeOther(i){
-  D.otherDests.splice(i,1);
-  save();render();
-}
-
-function go(s){
+// ── Navigation ──
+function go(s) {
+  var textareas = ['regionOther', 'actOther', 'dream', 'dealbreaker', 'notes', 'dietary'];
+  for (var i = 0; i < textareas.length; i++) {
+    var el = document.getElementById(textareas[i]);
+    if (el) D[textareas[i]] = el.value;
+  }
   save();
-  step=Math.max(1,Math.min(STEPS,s));
+  step = Math.max(1, Math.min(STEPS, s));
+  if (step === STEPS) launchConfetti();
   render();
 }
 
-function copySummary(){
-  const txt=buildSummary();
-  navigator.clipboard.writeText(txt).then(()=>{
-    const t=$('toast');t.classList.add('show');
-    setTimeout(()=>t.classList.remove('show'),2200);
+// ── Copy & Download ──
+function copyResults() {
+  var txt = buildSummary();
+  navigator.clipboard.writeText(txt).then(function() {
+    var t = $('toast');
+    t.classList.add('show');
+    setTimeout(function() { t.classList.remove('show'); }, 2200);
   });
 }
 
-function downloadSummary(){
-  const blob=new Blob([JSON.stringify(D,null,2)],{type:'application/json'});
-  const url=URL.createObjectURL(blob);
-  const a=document.createElement('a');
-  a.href=url;
-  a.download=`${(D.name||'survey').toLowerCase().replace(/\s+/g,'-')}.json`;
+function downloadResults() {
+  var blob = new Blob([JSON.stringify(D, null, 2)], { type: 'application/json' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = (D.name || 'unknown').toLowerCase().replace(/\s+/g, '-') + '-trip-preferences.json';
   a.click();
   URL.revokeObjectURL(url);
 }
 
-function submitSurvey(){
-  fetch('https://formspree.io/f/YOUR_FORM_ID',{
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body:JSON.stringify(D)
-  }).then(()=>{
-    alert('Thank you! Your response has been submitted.');
-  }).catch(err=>{
-    alert('Error submitting. Please download your response and email it.');
-  });
+function clearAll() {
+  if (confirm('Clear all your answers and start fresh?')) {
+    localStorage.removeItem('momdadAdventure');
+    D = {};
+    step = 1;
+    render();
+  }
 }
 
+// ── Confetti ──
+function launchConfetti() {
+  var c = $('confetti');
+  var ctx = c.getContext('2d');
+  c.width = window.innerWidth;
+  c.height = window.innerHeight;
+  c.style.display = 'block';
+  var pieces = [];
+  var colors = ['#c5a55a','#e8c97a','#4ade80','#60a5fa','#f87171','#fbbf24','#a78bfa','#fb923c'];
+  for (var i = 0; i < 150; i++) {
+    pieces.push({
+      x: Math.random() * c.width,
+      y: Math.random() * c.height - c.height,
+      w: Math.random() * 8 + 4,
+      h: Math.random() * 6 + 3,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      vx: (Math.random() - 0.5) * 4,
+      vy: Math.random() * 4 + 2,
+      rot: Math.random() * 360,
+      vr: (Math.random() - 0.5) * 8
+    });
+  }
+  var frames = 0;
+  function draw() {
+    ctx.clearRect(0, 0, c.width, c.height);
+    for (var i = 0; i < pieces.length; i++) {
+      var p = pieces[i];
+      p.x += p.vx; p.y += p.vy; p.rot += p.vr; p.vy += 0.05;
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rot * Math.PI / 180);
+      ctx.fillStyle = p.color;
+      ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+      ctx.restore();
+    }
+    frames++;
+    if (frames < 200) requestAnimationFrame(draw);
+    else { ctx.clearRect(0, 0, c.width, c.height); c.style.display = 'none'; }
+  }
+  draw();
+}
+
+// ── Start ──
 render();
 </script>
 </body>
