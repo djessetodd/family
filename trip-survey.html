@@ -30,22 +30,22 @@ textarea.text-input{resize:vertical;min-height:70px;font-size:0.9em}
 .rating-label{font-size:0.88em;flex:1;padding-right:8px;line-height:1.3}
 .rating-label small{display:block;font-size:0.8em;opacity:0.5;margin-top:2px}
 .hearts{display:flex;gap:3px}
-.heart{width:30px;height:30px;border-radius:50%;border:2px solid rgba(197,165,90,0.25);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:13px;transition:all 0.2s;user-select:none}
+.heart{width:30px;height:30px;border-radius:50%;border:2px solid rgba(197,165,90,0.25);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:13px;transition:all 0.2s}
 .heart.active{background:var(--gold);border-color:var(--gold);transform:scale(1.1)}
 .heart:hover{border-color:var(--gold);transform:scale(1.08)}
 .interest-item{display:flex;align-items:center;justify-content:space-between;padding:7px 0;border-bottom:1px solid rgba(255,255,255,0.04);gap:6px}
 .interest-item:last-child{border-bottom:none}
 .interest-label{font-size:0.85em;flex:1;min-width:0}
 .interest-btns{display:flex;gap:3px;flex-shrink:0}
-.ibtn{padding:5px 7px;border-radius:8px;border:1px solid rgba(197,165,90,0.18);background:transparent;color:var(--warm);cursor:pointer;font-size:0.68em;transition:all 0.2s;font-family:'Inter',sans-serif;white-space:nowrap}
+.ibtn{padding:5px 7px;border-radius:8px;border:1px solid rgba(197,165,90,0.18);background:transparent;color:var(--warm);cursor:pointer;font-size:0.68em;transition:all 0.2s;font-family:'Inter',sans-serif}
 .ibtn.active{background:var(--gold);color:var(--dark);border-color:var(--gold);font-weight:700}
 .ibtn:hover{border-color:var(--gold)}
 .option-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
-.opt{padding:10px 15px;border-radius:12px;border:1.5px solid rgba(197,165,90,0.2);background:rgba(255,255,255,0.03);color:var(--warm);cursor:pointer;font-size:0.84em;transition:all 0.2s;font-family:'Inter',sans-serif;user-select:none}
+.opt{padding:10px 15px;border-radius:12px;border:1.5px solid rgba(197,165,90,0.2);background:rgba(255,255,255,0.03);color:var(--warm);cursor:pointer;font-size:0.84em;transition:all 0.2s;font-family:'Inter',sans-serif}
 .opt.active{background:var(--gold);color:var(--dark);border-color:var(--gold);font-weight:600}
 .opt:hover{border-color:var(--gold)}
 .month-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:10px}
-.mbtn{padding:10px 6px;border-radius:10px;border:1.5px solid rgba(197,165,90,0.18);background:rgba(255,255,255,0.03);color:var(--warm);cursor:pointer;font-size:0.82em;text-align:center;transition:all 0.2s;font-family:'Inter',sans-serif;user-select:none}
+.mbtn{padding:10px 6px;border-radius:10px;border:1.5px solid rgba(197,165,90,0.18);background:rgba(255,255,255,0.03);color:var(--warm);cursor:pointer;font-size:0.82em;text-align:center;transition:all 0.2s;font-family:'Inter',sans-serif}
 .mbtn.great{background:var(--green);color:#1a1a2e;border-color:var(--green);font-weight:700}
 .mbtn.works{background:rgba(197,165,90,0.45);color:#fff;border-color:var(--gold);font-weight:500}
 .mbtn.cant{background:var(--red);color:#fff;border-color:var(--red);opacity:0.85;font-weight:500}
@@ -53,7 +53,7 @@ textarea.text-input{resize:vertical;min-height:70px;font-size:0.9em}
 .legend span{display:flex;align-items:center;gap:4px}
 .legend .dot{width:10px;height:10px;border-radius:50%;display:inline-block}
 .check-grid{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px}
-.chk{padding:9px 14px;border-radius:10px;border:1.5px solid rgba(197,165,90,0.18);background:rgba(255,255,255,0.03);color:var(--warm);cursor:pointer;font-size:0.82em;transition:all 0.2s;font-family:'Inter',sans-serif;user-select:none}
+.chk{padding:9px 14px;border-radius:10px;border:1.5px solid rgba(197,165,90,0.18);background:rgba(255,255,255,0.03);color:var(--warm);cursor:pointer;font-size:0.82em;transition:all 0.2s;font-family:'Inter',sans-serif}
 .chk.active{background:var(--gold);color:var(--dark);border-color:var(--gold);font-weight:600}
 .chk:hover{border-color:var(--gold)}
 .slider-row{margin:16px 0}
@@ -69,19 +69,13 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;heigh
 .btn-prev{background:rgba(255,255,255,0.1);color:var(--warm);flex:0.4}
 .btn-submit{background:linear-gradient(135deg,var(--gold),#d4af37);color:var(--dark);flex:1;font-size:1.05em;padding:15px}
 .btn-copy{background:var(--gold);color:var(--dark);width:100%;padding:15px;margin-top:10px;font-size:1em}
-.btn-whatsapp{background:#25D366;color:#fff;width:100%;padding:15px;margin-top:8px;font-size:1em}
-.btn-download{background:rgba(255,255,255,0.1);color:var(--warm);width:100%;padding:14px;margin-top:8px}
 .btn-reset{background:rgba(255,255,255,0.08);color:var(--warm);width:100%;padding:12px;margin-top:8px;font-size:0.85em;opacity:0.7}
-.summary-box{background:rgba(0,0,0,0.35);border-radius:14px;padding:16px;font-size:0.78em;line-height:1.7;white-space:pre-wrap;max-height:420px;overflow-y:auto;margin-top:14px;border:1px solid rgba(197,165,90,0.12);font-family:'Inter',monospace}
-.copied-toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--green);color:#1a1a2e;padding:12px 28px;border-radius:14px;font-weight:700;font-size:0.95em;transition:transform 0.4s ease;z-index:9999;box-shadow:0 8px 30px rgba(0,0,0,0.4)}
+.summary-box{background:rgba(0,0,0,0.35);border-radius:14px;padding:16px;font-size:0.78em;line-height:1.7;white-space:pre-wrap;max-height:420px;overflow-y:auto;margin-top:14px;border:1px solid rgba(197,165,90,0.1)}
+.copied-toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--green);color:#1a1a2e;padding:12px 28px;border-radius:14px;font-weight:700;font-size:0.95em;transition:transform 0.4s ease;z-index:9999}
 .copied-toast.show{transform:translateX(-50%) translateY(0)}
-.instructions-box{background:rgba(197,165,90,0.08);border:1px solid rgba(197,165,90,0.2);border-radius:14px;padding:18px;margin-top:16px;margin-bottom:10px}
-.instructions-box h3{color:var(--accent);font-size:0.95em;margin-bottom:10px;font-family:'Playfair Display',serif}
-.instructions-box .option-block{margin-bottom:16px}
-.instructions-box .option-block:last-child{margin-bottom:0}
-.instructions-box .option-title{color:var(--gold);font-weight:700;font-size:0.88em;margin-bottom:4px}
-.instructions-box ol{color:var(--warm);font-size:0.8em;line-height:1.8;padding-left:20px;opacity:0.8}
-.instructions-box p{color:var(--warm);font-size:0.8em;opacity:0.65;margin-top:4px;line-height:1.4}
+.inspiration{background:rgba(197,165,90,0.06);border:1px solid rgba(197,165,90,0.12);border-radius:12px;padding:14px;margin-top:14px;margin-bottom:18px}
+.inspiration h3{color:var(--accent);font-size:0.9em;margin-bottom:6px;font-family:'Playfair Display',serif}
+.inspiration p{font-size:0.78em;opacity:0.6;line-height:1.5}
 canvas#confetti{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;display:none}
 @media(max-width:380px){.ibtn{padding:4px 5px;font-size:0.62em}.heart{width:26px;height:26px;font-size:11px}.card{padding:18px 14px}.header h1{font-size:1.5em}}
 </style>
@@ -109,33 +103,44 @@ let D = JSON.parse(localStorage.getItem('momdadAdventure') || '{}');
 function save() { localStorage.setItem('momdadAdventure', JSON.stringify(D)); }
 
 const regions = [
-  { id: 'spain_portugal', n: '🇪🇸 Spain / Portugal', s: '' },
-  { id: 'south_france', n: '🇫🇷 Southern France', s: '' },
-  { id: 'alps', n: '🏔️ The Alps', s: 'Italy, Switzerland, Austria' },
-  { id: 'crete', n: '🇬🇷 Crete', s: '' },
-  { id: 'costa_rica', n: '🇨🇷 Costa Rica', s: '' },
-  { id: 'la_paz', n: '🇲🇽 La Paz, Mexico', s: '' }
+  { id: 'west_europe', n: '🇪🇺 Western Europe', s: 'France, Spain, Italy, Portugal' },
+  { id: 'mediterranean', n: '🇬🇷 Mediterranean', s: 'Greece, Crete, Croatia, Turkey' },
+  { id: 'uk_ireland', n: '🇬🇧 UK & Ireland', s: '' },
+  { id: 'scandinavia', n: '🇳🇴 Scandinavia & Iceland', s: '' },
+  { id: 'central_europe', n: '🇨🇿 Central/Eastern Europe', s: 'Czech Republic, Hungary, Poland' },
+  { id: 'mexico', n: '🇲🇽 Mexico', s: 'Baja, Oaxaca, Riviera' },
+  { id: 'central_america', n: '🇨🇷 Central America & Caribbean', s: 'Costa Rica, Belize, islands' },
+  { id: 'south_america', n: '🇧🇷 South America', s: 'Argentina, Colombia, Peru' },
+  { id: 'pacific', n: '🏝️ Pacific Islands', s: 'Fiji, Tahiti, Cook Islands' },
+  { id: 'se_asia', n: '🇹🇭 Southeast Asia', s: 'Thailand, Vietnam, Bali' },
+  { id: 'japan_korea', n: '🇯🇵 Japan & South Korea', s: '' },
+  { id: 'australia_nz', n: '🇦🇺 Australia & New Zealand', s: '' },
+  { id: 'canada', n: '🇨🇦 Canada', s: 'BC, Maritimes, Rockies' },
+  { id: 'us_destinations', n: '🇺🇸 US Destinations', s: 'Alaska, National Parks' },
+  { id: 'africa', n: '🌍 Africa', s: 'Morocco, South Africa, safari' }
 ];
 
 const activities = [
-  { id: 'music_live', n: '🎵 Live music & concerts' },
-  { id: 'music_play', n: '🎸 Playing music together' },
-  { id: 'crafts', n: '🎨 Crafts (pottery, painting, woodworking)' },
-  { id: 'water_sports', n: '🤿 Water sports (diving, snorkeling, kayaking)' },
-  { id: 'hiking_nature', n: '🥾 Hiking & nature exploration' },
-  { id: 'food_wine', n: '🍷 Food, wine & cooking classes' },
-  { id: 'beach_relax', n: '🏖️ Beach & relaxation' },
-  { id: 'culture', n: '🏛️ Culture (museums, history, architecture)' },
-  { id: 'cycling_adventure', n: '🚴 Cycling & active adventure' },
-  { id: 'wellness', n: '💆 Spa & wellness' }
+  { id: 'active', n: '🏔️ Active outdoors (hiking, cycling, golf)' },
+  { id: 'architecture', n: '🏰 Architecture & culture' },
+  { id: 'relaxation', n: '🏖️ Beach / spa / relaxation' },
+  { id: 'cooking', n: '👨‍🍳 Cooking classes / food tours' },
+  { id: 'crafting', n: '🎨 Crafting (pottery, painting, workshops)' },
+  { id: 'extreme', n: '⛰️ Extreme adventures (kayaking, bungee, zipline)' },
+  { id: 'music', n: '🎭 Live entertainment (theatre, comedy, music)' },
+  { id: 'diving', n: '🤿 Scuba / snorkeling' },
+  { id: 'shopping', n: '🛍️ Shopping & local markets' },
+  { id: 'wine', n: '🍷 Wine / beer / spirits tasting' }
 ];
 
 const lvls = ['Skip', 'Meh', 'Into it', 'MUST DO'];
-const flightOpts = ['6 hours or less', 'Up to 10 hours', 'Up to 15 hours'];
+const flightOpts = ['4 hrs', '6 hrs', '8 hrs', '10 hrs', '12 hrs', '15+ hrs', 'Anywhere worth it! ✈️'];
+const dayOpts = ['1 day each way', '2 days each way', 'Whatever it takes'];
+const connectOpts = ['Nonstop preferred', 'Connections fine', "Don't care"];
 const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 const tripLen = ['5 days', '7 days', '10 days', '14 days', 'Flexible'];
 const homeFeatures = ['🏊 Pool','🌊 Ocean/water view','⛰️ Mountain view','🚶 Walking to town','🍳 Large kitchen','🌿 Outdoor dining','🎮 Game room','♨️ Hot tub','🌺 Garden/yard','📶 Good WiFi','🛏️ Ensuite bedrooms'];
-const cuisines = ['🇮🇹 Italian','🇫🇷 French','🫒 Mediterranean','🇲🇽 Mexican/Latin','🥢 Asian','🦐 Seafood','🔥 BBQ / Grill','🌿 Farm-to-table','🌮 Street food','🥂 Fine dining','🍣 Sushi / Japanese','🥘 Indian / Middle Eastern'];
+const cuisines = ['🇮🇹 Italian','🇫🇷 French','🫒 Mediterranean','🇲🇽 Mexican/Latin','🥢 Asian','🦐 Seafood','🔥 BBQ / Grill','🌿 Farm-to-table','🌮 Street food','🥂 Fine dining'];
 
 const $ = id => document.getElementById(id);
 const app = $('app');
@@ -190,13 +195,13 @@ function renderRegions() {
   }
   return '<div class="card">' +
     '<h2>&#127757; Where in the World?</h2>' +
-    '<p class="subtitle">Rate each destination: 1 heart = "meh" &#8594; 5 hearts = "DREAM destination!" Leave blank if no opinion.</p>' +
+    '<p class="subtitle">Rate each region: 1 heart = "meh" &#8594; 5 hearts = "DREAM destination!" Leave blank if no opinion.</p>' +
     items +
     '</div>' +
     '<div class="card">' +
-    '<h2>&#128173; Somewhere else?</h2>' +
-    '<p class="subtitle">Any other destination calling your name?</p>' +
-    '<textarea class="text-input" id="regionOther" placeholder="e.g. \'What about the Amalfi Coast?\' or \'I\'ve always wanted to see Patagonia\'">' + esc(D.regionOther || '') + '</textarea>' +
+    '<h2>&#128173; Anywhere else?</h2>' +
+    '<p class="subtitle">Any specific place calling your name that\'s not listed?</p>' +
+    '<textarea class="text-input" id="regionOther" placeholder="e.g. \'I\'ve always wanted to see Patagonia\' or \'What about the Amalfi Coast?\'">' + esc(D.regionOther || '') + '</textarea>' +
     '</div>' + navButtons(true, true);
 }
 
@@ -228,11 +233,17 @@ function renderActivities() {
 // ── Step 4: Travel ──
 function renderTravel() {
   D.flight = D.flight || '';
+  D.travelDays = D.travelDays || '';
+  D.connects = D.connects || '';
   return '<div class="card">' +
-    '<h2>&#9992;&#65039; Travel Logistics</h2>' +
-    '<p class="subtitle">How far are you willing to fly?</p>' +
+    '<h2>&#9992;&#65039; Travel Reality</h2>' +
+    '<p class="subtitle">How far are you willing to go?</p>' +
     '<div class="field-label">Max flight time you\'re comfortable with:</div>' +
     '<div class="option-grid">' + makeOpts(flightOpts, 'flight', D.flight) + '</div>' +
+    '<div class="field-label">How many travel days each way?</div>' +
+    '<div class="option-grid">' + makeOpts(dayOpts, 'travelDays', D.travelDays) + '</div>' +
+    '<div class="field-label">Connecting flights?</div>' +
+    '<div class="option-grid">' + makeOpts(connectOpts, 'connects', D.connects) + '</div>' +
     '</div>' + navButtons(true, true);
 }
 
@@ -311,6 +322,10 @@ function renderWild() {
     '<textarea class="text-input" id="dealbreaker" placeholder="e.g. \'No extreme heat\' or \'Needs to be accessible\'">' + esc(D.dealbreaker) + '</textarea>' +
     '<div class="field-label">&#128221; Anything else on your mind?</div>' +
     '<textarea class="text-input" id="notes" placeholder="Ideas, concerns, must-haves, or just general vibes...">' + esc(D.notes) + '</textarea>' +
+    '</div>' +
+    '<div class="inspiration">' +
+    '<h3>&#128161; Need inspiration?</h3>' +
+    '<p>Jesse\'s slide deck explored Portugal, Australia, Costa Rica, Crete, and Mexico. But this trip could go anywhere — that\'s what this survey is for!</p>' +
     '</div>' + navButtons(true, true);
 }
 
@@ -319,31 +334,9 @@ function renderSummary() {
   let txt = buildSummary();
   return '<div class="card">' +
     '<h2>&#127881; Here\'s Your Profile, ' + esc(D.name || 'Adventurer') + '!</h2>' +
-    '<p class="subtitle">Review your answers below, then send them to Jesse using one of the two options.</p>' +
+    '<p class="subtitle">Review below, then copy to clipboard and paste it into the <strong>Family Trip</strong> chat! 💬</p>' +
     '<div class="summary-box" id="summaryBox">' + esc(txt) + '</div>' +
-    '<div class="instructions-box">' +
-    '<h3>&#128232; How to Submit</h3>' +
-    '<div class="option-block">' +
-    '<div class="option-title">Option 1: WhatsApp (easiest on your phone)</div>' +
-    '<ol>' +
-    '<li>Tap the green <strong>"Copy &amp; Open WhatsApp"</strong> button below</li>' +
-    '<li>It\'ll copy your results and open WhatsApp</li>' +
-    '<li>Find <strong>Jesse</strong> in your chats</li>' +
-    '<li>Long-press in the message box and tap <strong>Paste</strong></li>' +
-    '<li>Hit send! &#128640;</li>' +
-    '</ol>' +
-    '</div>' +
-    '<div class="option-block">' +
-    '<div class="option-title">Option 2: Email</div>' +
-    '<ol>' +
-    '<li>Tap <strong>"Download Results"</strong> below</li>' +
-    '<li>Email the downloaded file to <strong>jessetodd@hotmail.com</strong></li>' +
-    '</ol>' +
-    '</div>' +
-    '</div>' +
-    '<button class="btn btn-whatsapp" onclick="copyAndWhatsApp()">&#128172; Copy &amp; Open WhatsApp</button>' +
-    '<button class="btn btn-copy" onclick="copyResults()">&#128203; Just Copy to Clipboard</button>' +
-    '<button class="btn btn-download" onclick="downloadResults()">&#128190; Download Results File</button>' +
+    '<button class="btn btn-copy" onclick="copyResults()">&#128203; Copy to Clipboard</button>' +
     '<button class="btn btn-reset" onclick="clearAll()">&#128465; Clear &amp; Start Over</button>' +
     '</div>';
 }
@@ -368,68 +361,70 @@ function makeChecks(arr, type, selected) {
 }
 
 function buildSummary() {
-  let s = '✈️ TRIP PREFERENCES — ' + (D.name || '(no name)') + '\n';
-  s += '════════════════════════════════════════\n\n';
+  var nm = (D.name || 'Adventurer').trim();
+  var s = '✈️ TRIP PREFERENCES - ' + nm + '\n\n';
 
-  s += '🌍 DESTINATIONS:\n';
-  let ranked = regions.filter(function(r) { return (D.regions || {})[r.id] > 0; });
+  s += '🌍 TOP REGIONS:\n';
+  var ranked = regions.filter(function(r) { return (D.regions || {})[r.id] > 0; });
   ranked.sort(function(a, b) { return (D.regions[b.id] || 0) - (D.regions[a.id] || 0); });
   if (ranked.length) {
-    for (let i = 0; i < ranked.length; i++) {
-      let r = ranked[i];
-      let h = '';
-      for (let j = 0; j < D.regions[r.id]; j++) h += '❤️';
-      s += '  ' + h + ' ' + r.n + '\n';
+    for (var i = 0; i < ranked.length; i++) {
+      var r = ranked[i];
+      var h = '';
+      for (var j = 0; j < D.regions[r.id]; j++) h += '❤️';
+      s += h + ' ' + r.n + '\n';
     }
-  } else { s += '  (none rated)\n'; }
-  if (D.regionOther) s += '  💭 Also mentioned: ' + D.regionOther + '\n';
+  } else { s += '(none rated)\n'; }
+  if (D.regionOther) s += '💭 Also mentioned: ' + D.regionOther.trim() + '\n';
 
   s += '\n🎯 ACTIVITIES:\n';
-  let mustDo = [], into = [], meh = [];
-  let act = D.activities || {};
-  for (let k in act) {
-    let a = null;
-    for (let i = 0; i < activities.length; i++) { if (activities[i].id === k) { a = activities[i]; break; } }
+  var mustDo = [], into = [], meh = [];
+  var act = D.activities || {};
+  for (var k in act) {
+    var a = null;
+    for (var i = 0; i < activities.length; i++) { if (activities[i].id === k) { a = activities[i]; break; } }
     if (!a) continue;
     if (act[k] === 'MUST DO') mustDo.push(a.n);
     else if (act[k] === 'Into it') into.push(a.n);
     else if (act[k] === 'Meh') meh.push(a.n);
   }
-  if (mustDo.length) s += '  🔥 MUST DO: ' + mustDo.join(', ') + '\n';
-  if (into.length) s += '  👍 Into it: ' + into.join(', ') + '\n';
-  if (meh.length) s += '  😐 Meh: ' + meh.join(', ') + '\n';
-  if (D.actOther) s += '  ⭐ Also wants: ' + D.actOther + '\n';
+  if (mustDo.length) s += '🔥 MUST DO: ' + mustDo.join(', ') + '\n';
+  if (into.length) s += '👍 Into it: ' + into.join(', ') + '\n';
+  if (meh.length) s += '😐 Meh: ' + meh.join(', ') + '\n';
+  if (D.actOther) s += '⭐ Also wants: ' + D.actOther.trim() + '\n';
 
   s += '\n✈️ TRAVEL:\n';
-  if (D.flight) s += '  Max flight: ' + D.flight + '\n';
+  if (D.flight) s += 'Max flight: ' + D.flight + '\n';
+  if (D.travelDays) s += 'Travel days: ' + D.travelDays + '\n';
+  if (D.connects) s += 'Connections: ' + D.connects + '\n';
 
   s += '\n📅 TIMING:\n';
-  let great = [], works = [], cant = [];
+  var great = [], works = [], cant = [];
   var mo = D.months || {};
-  for (let m in mo) {
+  for (var m in mo) {
     if (mo[m] === 'great') great.push(m.slice(0, 3));
     else if (mo[m] === 'works') works.push(m.slice(0, 3));
     else if (mo[m] === 'cant') cant.push(m.slice(0, 3));
   }
-  if (great.length) s += '  ✅ Great: ' + great.join(', ') + '\n';
-  if (works.length) s += '  👍 Works: ' + works.join(', ') + '\n';
-  if (cant.length) s += '  ❌ Can\'t: ' + cant.join(', ') + '\n';
-  if (D.tripLen) s += '  📏 Trip length: ' + D.tripLen + '\n';
+  if (great.length) s += '✅ Great: ' + great.join(', ') + '\n';
+  if (works.length) s += '👍 Works: ' + works.join(', ') + '\n';
+  if (cant.length) s += '❌ Can\'t: ' + cant.join(', ') + '\n';
+  if (D.tripLen) s += '📏 Trip length: ' + D.tripLen + '\n';
 
   s += '\n🎚️ VIBE:\n';
-  s += '  Energy: ' + vibeLabel(D.vibe1, '🧘 Relaxation', '🧗 Adventure') + '\n';
-  s += '  Style: ' + vibeLabel(D.vibe2, '🏛️ Cultural', '🏖️ Resort') + '\n';
-  s += '  Planning: ' + vibeLabel(D.vibe3, '📋 Structured', '🌊 Spontaneous') + '\n';
+  s += 'Energy: ' + vibeLabel(D.vibe1, '🧘 Relaxation', '🧗 Adventure') + '\n';
+  s += 'Style: ' + vibeLabel(D.vibe2, '🏛️ Cultural', '🏖️ Resort') + '\n';
+  s += 'Planning: ' + vibeLabel(D.vibe3, '📋 Structured', '🌊 Spontaneous') + '\n';
 
-  if ((D.homeFeatures || []).length) s += '\n🏡 HOME MUST-HAVES:\n  ' + D.homeFeatures.join(', ') + '\n';
+  if ((D.homeFeatures || []).length) s += '\n🏡 HOME MUST-HAVES:\n' + D.homeFeatures.join(', ') + '\n';
 
-  if ((D.cuisines || []).length) s += '\n🍽️ CUISINES:\n  ' + D.cuisines.join(', ') + '\n';
-  if (D.dietary) s += '  ⚠️ Dietary: ' + D.dietary + '\n';
+  if ((D.cuisines || []).length) s += '\n🍽️ CUISINES:\n' + D.cuisines.join(', ') + '\n';
+  if (D.dietary) s += '⚠️ Dietary: ' + D.dietary.trim() + '\n';
 
   s += '\n💬 WILD CARD:\n';
-  if (D.dream) s += '  ✨ Dream: ' + D.dream + '\n';
-  if (D.dealbreaker) s += '  🚫 Dealbreaker: ' + D.dealbreaker + '\n';
-  if (D.notes) s += '  📝 Notes: ' + D.notes + '\n';
+  if (D.dream) s += '✨ Dream: ' + D.dream.trim() + '\n';
+  if (D.dealbreaker) s += '🚫 Dealbreaker: ' + D.dealbreaker.trim() + '\n';
+  if (D.notes) s += '📝 Notes: ' + D.notes.trim() + '\n';
 
   return s;
 }
@@ -534,39 +529,15 @@ function go(s) {
   render();
 }
 
-// ── Copy, WhatsApp & Download ──
+// ── Copy ──
 function copyResults() {
   var txt = buildSummary();
   navigator.clipboard.writeText(txt).then(function() {
-    showToast('✅ Copied to clipboard!');
+    var t = $('toast');
+    t.textContent = '✅ Copied! Now paste into the Family Trip chat';
+    t.classList.add('show');
+    setTimeout(function() { t.classList.remove('show'); }, 3000);
   });
-}
-
-function copyAndWhatsApp() {
-  var txt = buildSummary();
-  navigator.clipboard.writeText(txt).then(function() {
-    showToast('✅ Copied! Opening WhatsApp...');
-    setTimeout(function() {
-      window.open('https://wa.me/', '_blank');
-    }, 600);
-  });
-}
-
-function showToast(msg) {
-  var t = $('toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  setTimeout(function() { t.classList.remove('show'); }, 2500);
-}
-
-function downloadResults() {
-  var blob = new Blob([JSON.stringify(D, null, 2)], { type: 'application/json' });
-  var url = URL.createObjectURL(blob);
-  var a = document.createElement('a');
-  a.href = url;
-  a.download = (D.name || 'unknown').toLowerCase().replace(/\s+/g, '-') + '-trip-preferences.json';
-  a.click();
-  URL.revokeObjectURL(url);
 }
 
 function clearAll() {
