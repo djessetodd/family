@@ -25,7 +25,7 @@ h1,h2,h3{font-family:'Playfair Display',serif}
 .name-input,.text-input{width:100%;padding:14px 16px;border-radius:12px;border:2px solid rgba(197,165,90,0.25);background:rgba(255,255,255,0.04);color:#fff;font-size:1em;font-family:'Inter',sans-serif;outline:none;transition:border-color 0.3s}
 .name-input:focus,.text-input:focus{border-color:var(--gold)}
 textarea.text-input{resize:vertical;min-height:70px;font-size:0.9em}
-.rating-item{display:flex;align-items:center;justify-content:space-between;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
+.rating-item{display:flex;align-items:center;justify-content:space-between;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.04);gap:8px}
 .rating-item:last-child{border-bottom:none}
 .rating-label{font-size:0.88em;flex:1;padding-right:8px;line-height:1.3}
 .hearts{display:flex;gap:3px}
@@ -44,10 +44,10 @@ textarea.text-input{resize:vertical;min-height:70px;font-size:0.9em}
 .opt.active{background:var(--gold);color:var(--dark);border-color:var(--gold);font-weight:600}
 .opt:hover{border-color:var(--gold)}
 .month-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:10px}
-.mbtn{padding:10px 6px;border-radius:10px;border:1.5px solid rgba(197,165,90,0.18);background:rgba(255,255,255,0.03);color:var(--warm);cursor:pointer;font-size:0.82em;text-align:center;transition:all 0.2s;font-family:'Inter',sans-serif;user-select:none}
+.mbtn{padding:10px 6px;border-radius:10px;border:1.5px solid rgba(197,165,90,0.18);background:rgba(255,255,255,0.03);color:var(--warm);cursor:pointer;font-size:0.82em;text-align:center;transition:all 0.2s;font-family:'Inter',sans-serif;user-select:none;font-weight:500}
 .mbtn.great{background:var(--green);color:#1a1a2e;border-color:var(--green);font-weight:700}
-.mbtn.works{background:rgba(197,165,90,0.45);color:#fff;border-color:var(--gold);font-weight:500}
-.mbtn.cant{background:var(--red);color:#fff;border-color:var(--red);opacity:0.85;font-weight:500}
+.mbtn.works{background:rgba(197,165,90,0.45);color:#fff;border-color:var(--gold);font-weight:600}
+.mbtn.cant{background:var(--red);color:#fff;border-color:var(--red);opacity:0.9;font-weight:600}
 .legend{display:flex;gap:14px;margin-top:10px;font-size:0.72em;color:var(--warm);opacity:0.6;flex-wrap:wrap}
 .legend span{display:flex;align-items:center;gap:4px}
 .legend .dot{width:10px;height:10px;border-radius:50%;display:inline-block}
@@ -76,6 +76,12 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;heigh
 .inspiration h3{color:var(--accent);font-size:0.9em;margin-bottom:6px}
 .inspiration p{font-size:0.78em;opacity:0.6;line-height:1.5}
 canvas#confetti{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999}
+.other-input-row{display:flex;gap:8px;margin-top:10px;align-items:flex-end}
+.other-input-row input{flex:1}
+.other-input-row button{flex:0;padding:10px 15px;background:var(--gold);color:var(--dark);border:none;border-radius:8px;cursor:pointer;font-weight:600;transition:all 0.2s}
+.other-input-row button:hover{background:var(--accent)}
+.other-item{background:rgba(197,165,90,0.08);border:1px solid rgba(197,165,90,0.2);border-radius:8px;padding:10px;margin-top:8px;display:flex;justify-content:space-between;align-items:center;font-size:0.85em}
+.other-item button{background:var(--red);color:#fff;padding:4px 8px;border:none;border-radius:4px;cursor:pointer;font-size:0.75em}
 @media(max-width:380px){.ibtn{padding:4px 5px;font-size:0.62em}.heart{width:26px;height:26px;font-size:11px}.card{padding:18px 14px}}
 </style>
 </head>
@@ -107,8 +113,7 @@ const regions=[
 {id:'southern_france',n:'🇫🇷 Southern France'},
 {id:'crete',n:'🇬🇷 Crete'},
 {id:'costa_rica',n:'🇨🇷 Costa Rica'},
-{id:'la_paz_mexico',n:'🇲🇽 La Paz, Mexico'},
-{id:'other',n:'💭 Other'}
+{id:'la_paz_mexico',n:'🇲🇽 La Paz, Mexico'}
 ];
 
 const activities=[
@@ -159,7 +164,7 @@ function nav(prev,next){
   let n='';
   if(prev) n+=`<button class="btn btn-prev" onclick="go(${step-1})">← Back</button>`;
   if(next&&step<STEPS) n+=`<button class="btn btn-next" onclick="go(${step+1})">Next →</button>`;
-  if(step===STEPS-1) n+=`<button class="btn btn-submit" onclick="go(${step+1})">🎉 Results</button>`;
+  if(step===STEPS-1) n+=`<button class="btn btn-submit" onclick="go(${step+1})">🎉 Submit</button>`;
   return `<div class="nav">${n}</div>`;
 }
 
@@ -170,13 +175,15 @@ function renderName(){
 
 function renderRegions(){
   D.regions=D.regions||{};
+  D.otherDests=D.otherDests||[];
   let items=regions.map(r=>{
     let v=D.regions[r.id]||0;
     let hearts='';
     for(let i=1;i<=5;i++) hearts+=`<div class="heart ${i<=v?'active':''} " data-r="${r.id}" data-v="${i}">${i<=v?'❤️':'🤍'}</div>`;
     return `<div class="rating-item"><div class="rating-label">${r.n}</div><div class="hearts">${hearts}</div></div>`;
   }).join('');
-  return `<div class="card"><h2>🌍 Destinations</h2>${items}</div>${nav(true,true)}`;
+  let otherList=D.otherDests.map((d,i)=>`<div class="other-item">${d}<button onclick="removeOther(${i})">Remove</button></div>`).join('');
+  return `<div class="card"><h2>🌍 Destinations</h2><p class="subtitle">Rate each: 1 = meh → 5 = DREAM</p>${items}<div class="field-label">Other destinations?</div><div class="other-input-row"><input type="text" id="otherDestInput" placeholder="e.g., Switzerland, Iceland..."><button onclick="addOther()">Add</button></div>${otherList}</div>${nav(true,true)}`;
 }
 
 function renderActivities(){
@@ -201,21 +208,44 @@ function renderTiming(){
     let st=D.months[m]||'';
     return `<div class="mbtn ${st} " data-m="${m}">${m.slice(0,3)}</div>`;
   }).join('');
-  return `<div class="card"><h2>📅 Months</h2><div class="month-grid">${mgrid}</div></div>${nav(true,true)}`;
+  return `<div class="card"><h2>📅 Best Months</h2><p class="subtitle">Tap to cycle: Great ✅ → Works 👍 → Avoid ❌ → reset</p><div class="month-grid">${mgrid}</div><div class="legend"><span><span class="dot" style="background:var(--green)"></span>Great</span><span><span class="dot" style="background:rgba(197,165,90,0.45)"></span>Works</span><span><span class="dot" style="background:var(--red)"></span>Avoid</span></div></div>${nav(true,true)}`;
 }
 
 function renderAccom(){
   D.vibe1=D.vibe1??50;
-  return `<div class="card"><h2>🎚️ Vibe</h2><input type="range" min="0" max="100" value="${D.vibe1}" id="vibe1"></div>${nav(true,true)}`;
+  D.vibe2=D.vibe2??50;
+  D.vibe3=D.vibe3??50;
+  return `<div class="card"><h2>🎚️ Trip Vibe</h2><p class="subtitle">Slide toward what appeals to you</p><div class="slider-row"><label>Energy Level</label><input type="range" min="0" max="100" value="${D.vibe1}" id="vibe1"><div class="slider-ends"><span>🧘 Relax</span><span>🧗 Adventure</span></div></div><div class="slider-row"><label>Experience</label><input type="range" min="0" max="100" value="${D.vibe2}" id="vibe2"><div class="slider-ends"><span>🏛️ Culture</span><span>🏖️ Luxury</span></div></div><div class="slider-row"><label>Planning</label><input type="range" min="0" max="100" value="${D.vibe3}" id="vibe3"><div class="slider-ends"><span>📋 Planned</span><span>🌊 Spontaneous</span></div></div></div>${nav(true,true)}`;
 }
 
 function renderWild(){
   D.dream=D.dream||'';
-  return `<div class="card"><h2>💬 Dream trip:</h2><textarea class="text-input" id="dream" placeholder="Your dream trip...">${D.dream}</textarea></div>${nav(true,true)}`;
+  return `<div class="card"><h2>💭 Bottom Line</h2><p class="subtitle">What's most important to you for this trip?</p><textarea class="text-input" id="dream" placeholder="e.g., Quality family time, adventure & learning, relaxation by water...">${D.dream}</textarea></div>${nav(true,true)}`;
 }
 
 function renderSummary(){
-  return `<div class="card"><h2>🎉 Done!</h2><p>Thank you for completing the survey!</p><button class="btn btn-copy" onclick="go(1)">Start Over</button></div>`;
+  let summary=buildSummary();
+  return `<div class="card"><h2>🎉 Your Profile</h2><div class="summary-box">${summary}</div><button class="btn btn-copy" onclick="copySummary()">📋 Copy</button><button class="btn btn-download" onclick="downloadSummary()">💾 Download</button><button class="btn btn-submit" onclick="submitSurvey()">📤 Submit</button></div>`;
+}
+
+function buildSummary(){
+  let s=`✈️ TRIP PREFERENCES\n${D.name||'Guest'}\n${'═'.repeat(40)}\n\n`;
+  let ranked=regions.filter(r=>(D.regions||{})[r.id]>0).sort((a,b)=>(D.regions[b.id]||0)-(D.regions[a.id]||0));
+  if(ranked.length) ranked.forEach(r=>s+=`  ${'❤️'.repeat(D.regions[r.id])} ${r.n}\n`);
+  if((D.otherDests||[]).length) s+=`  💭 Other: ${D.otherDests.join(', ')}\n`;
+  s+=`\n🎯 ACTIVITIES:\n`;
+  let mustDo=[],into=[],meh=[];
+  Object.entries(D.activities||{}).forEach(([k,v])=>{let a=activities.find(x=>x.id===k);if(!a)return;if(v==='MUST DO')mustDo.push(a.n);else if(v==='Into it')into.push(a.n);else if(v==='Meh')meh.push(a.n);});
+  if(mustDo.length) s+=`  🔥 MUST DO: ${mustDo.join(', ')}\n`;
+  if(into.length) s+=`  👍 Into it: ${into.join(', ')}\n`;
+  s+=`\n📅 BEST MONTHS:\n`;
+  let great=[],works=[],cant=[];
+  Object.entries(D.months||{}).forEach(([m,v])=>{if(v==='great')great.push(m.slice(0,3));else if(v==='works')works.push(m.slice(0,3));else if(v==='cant')cant.push(m.slice(0,3));});
+  if(great.length) s+=`  ✅ Great: ${great.join(', ')}\n`;
+  if(works.length) s+=`  👍 Works: ${works.join(', ')}\n`;
+  s+=`\n🎚️ VIBE:\n  Energy: ${D.vibe1<=30?'🧘 Relax':D.vibe1>=70?'🧗 Adventure':'⚖️ Balanced'}\n  Style: ${D.vibe2<=30?'🏛️ Culture':D.vibe2>=70?'🏖️ Luxury':'⚖️ Mix'}\n  Planning: ${D.vibe3<=30?'📋 Structured':D.vibe3>=70?'🌊 Spontaneous':'⚖️ Flexible'}\n`;
+  s+=`\n💭 BOTTOM LINE:\n  ${D.dream||'(not provided)'}\n`;
+  return s;
 }
 
 function bindEvents(){
@@ -246,10 +276,54 @@ function bindEvents(){
   if(dream) dream.addEventListener('input',e=>{D.dream=e.target.value;save()});
 }
 
+function addOther(){
+  const inp=document.getElementById('otherDestInput');
+  if(inp.value.trim()){
+    if(!D.otherDests) D.otherDests=[];
+    D.otherDests.push(inp.value.trim());
+    save();render();
+  }
+}
+
+function removeOther(i){
+  D.otherDests.splice(i,1);
+  save();render();
+}
+
 function go(s){
   save();
   step=Math.max(1,Math.min(STEPS,s));
   render();
+}
+
+function copySummary(){
+  const txt=buildSummary();
+  navigator.clipboard.writeText(txt).then(()=>{
+    const t=$('toast');t.classList.add('show');
+    setTimeout(()=>t.classList.remove('show'),2200);
+  });
+}
+
+function downloadSummary(){
+  const blob=new Blob([JSON.stringify(D,null,2)],{type:'application/json'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;
+  a.download=`${(D.name||'survey').toLowerCase().replace(/\s+/g,'-')}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function submitSurvey(){
+  fetch('https://formspree.io/f/YOUR_FORM_ID',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(D)
+  }).then(()=>{
+    alert('Thank you! Your response has been submitted.');
+  }).catch(err=>{
+    alert('Error submitting. Please download your response and email it.');
+  });
 }
 
 render();
